@@ -4,10 +4,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/uploads": "uploads" });
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
 
-  // ✅ Always treat files in src/posts as the posts collection
+  // Posts collection
   eleventyConfig.addCollection("posts", (collectionApi) => {
     return collectionApi.getFilteredByGlob("src/posts/*.md");
   });
+
+  // Date filter (fixes Netlify build)
+  eleventyConfig.addFilter("date", () => new Date().getFullYear());
 
   return {
     dir: {
