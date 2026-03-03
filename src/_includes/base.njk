@@ -1,26 +1,48 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ title or "Demo" }}</title>
- <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ title or "Site" }}</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+
   <body>
-    {{ content | safe }}
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="/">Patent Engineer</a>
+
+        <nav class="nav">
+          <a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a>
+          <a href="/articles/" {% if page.url and page.url.startsWith("/articles") %}aria-current="page"{% endif %}>Articles</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      {{ content | safe }}
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <small>© {{ "now" | date("yyyy") }} Patent Engineer</small>
+      </div>
+    </footer>
+
     <script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", () => {
-      const hash = window.location.hash || "";
-      if (
-        hash.includes("invite_token=") ||
-        hash.includes("recovery_token=") ||
-        hash.includes("confirmation_token=")
-      ) {
-        window.netlifyIdentity.open();
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", () => {
+          const hash = window.location.hash || "";
+          if (
+            hash.includes("invite_token=") ||
+            hash.includes("recovery_token=") ||
+            hash.includes("confirmation_token=")
+          ) {
+            window.netlifyIdentity.open();
+          }
+        });
       }
-    });
-  }
-</script>
+    </script>
   </body>
 </html>

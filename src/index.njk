@@ -3,38 +3,34 @@ layout: base.njk
 title: Home
 ---
 
-<h1>11ty + Decap CMS Demo</h1>
-<p>This is a practice site. You’ll add articles via <code>/admin</code>.</p>
+<section class="hero">
+  <div class="hero-card">
+    <h1>Patent Engineering & IP Support</h1>
+    <p>
+      A clean practice site built with 11ty + Decap CMS. Publish articles from the admin panel and keep the main site fast and secure.
+    </p>
+  </div>
+</section>
 
-<div class="card">
-  <h2>Next step</h2>
-  <p>Deploy to Netlify and enable the CMS admin panel.</p>
+<div class="section-head">
+  <h2>Latest Articles</h2>
+  <a href="/articles/">View all →</a>
 </div>
 
-<h2>Latest Articles</h2>
-
 {% if collections.posts and collections.posts.length %}
-  {% for post in collections.posts | reverse %}
-    {% if loop.index0 < 3 %}
-      <article class="card">
-        <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
-
-        {% if post.data.description %}
-          <p>{{ post.data.description }}</p>
-        {% endif %}
-
-        {% if post.data.featured_image %}
-          <img
-            src="{{ post.data.featured_image }}"
-            alt=""
-            style="max-width:100%; border-radius:12px; margin-top:12px;"
-          />
-        {% endif %}
-      </article>
-    {% endif %}
-  {% endfor %}
-
-  <p><a href="/articles/">View all articles →</a></p>
+  <div class="cards">
+    {% for post in collections.posts | reverse %}
+      {% if loop.index0 < 3 %}
+        <article class="card">
+          <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+          {% if post.data.description %}<p>{{ post.data.description }}</p>{% endif %}
+          {% if post.data.featured_image %}
+            <img src="{{ post.data.featured_image }}" alt="" />
+          {% endif %}
+        </article>
+      {% endif %}
+    {% endfor %}
+  </div>
 {% else %}
   <p>No articles yet.</p>
 {% endif %}
