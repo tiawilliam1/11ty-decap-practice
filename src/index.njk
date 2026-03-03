@@ -12,7 +12,7 @@ title: Home
 </div>
 
 <h2>Latest Articles</h2>
-
+<p><strong>Debug:</strong> posts count = {{ collections.posts | length }}</p>
 {% set latestPosts = collections.posts | reverse | slice(0, 3) %}
 
 {% if latestPosts.length %}
