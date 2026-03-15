@@ -11,12 +11,19 @@
   <body>
     <header class="site-header">
       <div class="wrap header-inner">
-        <a class="brand" href="/">Patent Engineer</a>
+        <a class="brand" href="/" aria-label="Deep-Tech home">
+          <img src="/assets/img/newlogo.png" alt="Deep Tech logo" />
+        </a>
 
-        <nav class="nav">
-          <a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a>
-          <a href="/articles/" {% if page.url and page.url.startsWith("/articles") %}aria-current="page"{% endif %}>Articles</a>
+        <nav class="nav" aria-label="Primary">
+          <a href="/#home" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a>
+          <a href="/#services">Services</a>
+          <a href="/#about">About Me</a>
+          <a href="/#industries">Industries &amp; Clients</a>
+          <a href="/#publications">Publications &amp; Projects</a>
         </nav>
+
+        <a class="cta-pill" href="#contact">Contact</a>
       </div>
     </header>
 

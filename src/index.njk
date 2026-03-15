@@ -3,34 +3,83 @@ layout: base.njk
 title: Home
 ---
 
-<section class="hero">
-  <div class="hero-card">
-    <h1>Patent Engineering & IP Support</h1>
-    <p>
-      A clean practice site built with 11ty + Decap CMS. Publish articles from the admin panel and keep the main site fast and secure.
-    </p>
+<section class="hero" id="home">
+  <div class="hero-card hero-card--cover">
+    <div class="hero-copy">
+      <h1 class="hero-title">Patent Intelligence for High-Stakes Innovation.</h1>
+      <h2>
+      From semiconductor physics to strategic IP decisions — I help companies and IP firms secure, evaluate, and navigate complex technologies.
+      </h2>
+      <div class="hero-actions">
+        <a class="btn primary" href="#contact">Schedule a consult</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<div class="section-head">
-  <h2>Latest Articles</h2>
-  <a href="/articles/">View all →</a>
-</div>
-
-{% if collections.posts and collections.posts.length %}
-  <div class="cards">
-    {% for post in collections.posts | reverse %}
-      {% if loop.index0 < 3 %}
-        <article class="card">
-          <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
-          {% if post.data.description %}<p>{{ post.data.description }}</p>{% endif %}
-          {% if post.data.featured_image %}
-            <img src="{{ post.data.featured_image }}" alt="" />
-          {% endif %}
-        </article>
-      {% endif %}
-    {% endfor %}
+<section class="services" id="services">
+  <div class="services-head">
+    <p class="services-kicker">Services</p>
+    <h2>Strategic support across the full patent lifecycle.</h2>
   </div>
-{% else %}
-  <p>No articles yet.</p>
-{% endif %}
+  <div class="services-grid">
+    <article class="service-card">
+      <div class="service-text">
+        <h3>Patentability &amp; Prior Art Analysis</h3>
+        <p>
+          Evidence-driven novelty and inventive-step assessments for complex technologies, with clear claim-risk framing.
+        </p>
+      </div>
+      <figure class="service-media">
+        <img src="/assets/img/serv1.png" alt="Photonics and deep tech visual" />
+      </figure>
+    </article>
+    <article class="service-card service-card--reverse">
+      <div class="service-text">
+        <h3>Freedom-to-Operate &amp; Risk Mapping</h3>
+        <p>
+          Focused FTO reviews and portfolio mapping to identify blocking rights, design-around paths, and exposure hotspots.
+        </p>
+      </div>
+      <figure class="service-media">
+        <img src="/assets/img/serv2.png" alt="Analytics and risk mapping visual" />
+      </figure>
+    </article>
+    <article class="service-card">
+      <div class="service-text">
+        <h3>Claim Drafting &amp; Prosecution Strategy</h3>
+        <p>
+          Technically precise claim architecture and prosecution planning aligned to business goals, licensing, and defensibility.
+        </p>
+      </div>
+      <figure class="service-media">
+        <img src="/assets/img/serv3.png" alt="Claim strategy and innovation visual" />
+      </figure>
+    </article>
+  </div>
+</section>
+
+<section class="articles-preview" id="publications">
+  <div class="section-head">
+    <h2>Latest Articles</h2>
+    <a href="/articles/">View all →</a>
+  </div>
+
+  {% if collections.posts and collections.posts.length %}
+    <div class="cards">
+      {% for post in collections.posts | reverse %}
+        {% if loop.index0 < 3 %}
+          <article class="card">
+            <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+            {% if post.data.description %}<p>{{ post.data.description }}</p>{% endif %}
+            {% if post.data.featured_image %}
+              <img src="{{ post.data.featured_image }}" alt="" />
+            {% endif %}
+          </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No articles yet.</p>
+  {% endif %}
+</section>
