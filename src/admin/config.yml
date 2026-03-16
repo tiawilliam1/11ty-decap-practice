@@ -6,6 +6,18 @@ media_folder: "src/uploads"
 public_folder: "/uploads"
 
 collections:
+  - name: "site_pages"
+    label: "Site Pages"
+    files:
+      - label: "About Me"
+        name: "about_page"
+        file: "src/_data/about.json"
+        fields:
+          - { label: "Page Title", name: "page_title", widget: "string" }
+          - { label: "Intro Text", name: "intro_text", widget: "text" }
+          - { label: "Section Title", name: "section_title", widget: "string" }
+          - { label: "Section Text", name: "section_text", widget: "text" }
+
   - name: "posts"
     label: "Articles"
     folder: "src/posts"

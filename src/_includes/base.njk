@@ -16,14 +16,14 @@
         </a>
 
         <nav class="nav" aria-label="Primary">
-          <a href="/#home" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a>
-          <a href="/#services">Services</a>
-          <a href="/#about">About Me</a>
-          <a href="/#industries">Industries &amp; Clients</a>
-          <a href="/#publications">Publications &amp; Projects</a>
+          <a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a>
+          <a href="/services/" {% if page.url == "/services/" %}aria-current="page"{% endif %}>Services</a>
+          <a href="/about/" {% if page.url == "/about/" %}aria-current="page"{% endif %}>About Me</a>
+          <a href="/industries-clients/" {% if page.url == "/industries-clients/" %}aria-current="page"{% endif %}>Industries &amp; Clients</a>
+          <a href="/publications-projects/" {% if page.url == "/publications-projects/" %}aria-current="page"{% endif %}>Publications &amp; Projects</a>
         </nav>
 
-        <a class="cta-pill" href="#contact">Contact</a>
+        <a class="cta-pill" href="/contact/">Contact</a>
       </div>
     </header>
 
