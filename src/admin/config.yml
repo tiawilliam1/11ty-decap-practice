@@ -13,10 +13,29 @@ collections:
         name: "about_page"
         file: "src/_data/about.json"
         fields:
+          - { label: "Hero Kicker", name: "hero_kicker", widget: "string" }
           - { label: "Page Title", name: "page_title", widget: "string" }
-          - { label: "Intro Text", name: "intro_text", widget: "text" }
-          - { label: "Section Title", name: "section_title", widget: "string" }
-          - { label: "Section Text", name: "section_text", widget: "text" }
+          - { label: "Short Intro", name: "short_intro", widget: "text" }
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Role", name: "role", widget: "string" }
+          - { label: "Main Intro", name: "intro_text", widget: "text" }
+          - { label: "Profile Image", name: "profile_image", widget: "image" }
+          - { label: "Profile Image Alt", name: "profile_image_alt", widget: "string" }
+          - { label: "Quick Facts Title", name: "quick_facts_title", widget: "string" }
+          - label: "Quick Facts"
+            name: "quick_facts"
+            widget: "list"
+            field: { label: "Fact", name: "item", widget: "string" }
+          - { label: "Professional Highlights Title", name: "professional_highlights_title", widget: "string" }
+          - label: "Professional Highlights"
+            name: "professional_highlights"
+            widget: "list"
+            field: { label: "Highlight", name: "item", widget: "string" }
+          - { label: "Scientific Achievements Title", name: "scientific_achievements_title", widget: "string" }
+          - label: "Scientific Achievements"
+            name: "scientific_achievements"
+            widget: "list"
+            field: { label: "Achievement", name: "item", widget: "string" }
 
   - name: "posts"
     label: "Articles"

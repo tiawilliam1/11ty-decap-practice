@@ -4,12 +4,56 @@ title: About Me
 permalink: /about/
 ---
 
-<section class="page-intro">
-  <h1>{{ about.page_title }}</h1>
-  <p>{{ about.intro_text }}</p>
-</section>
+<section class="about-page">
+  <div class="about-hero">
+    <p class="about-kicker">{{ about.hero_kicker }}</p>
+    <h1>{{ about.page_title }}</h1>
+    <p class="about-short">{{ about.short_intro }}</p>
+  </div>
 
-<section class="page-content">
-  <h2>{{ about.section_title }}</h2>
-  <p>{{ about.section_text }}</p>
+  <section class="about-split">
+    <article class="about-profile">
+      <h2>{{ about.name }}</h2>
+      <p class="about-role">{{ about.role }}</p>
+      <p>{{ about.intro_text }}</p>
+    </article>
+    <figure class="about-image">
+      <img src="{{ about.profile_image }}" alt="{{ about.profile_image_alt }}" />
+    </figure>
+  </section>
+
+  <div class="about-grid about-grid--three">
+    <article class="about-card about-card--facts">
+      <h3>{{ about.quick_facts_title }}</h3>
+      {% if about.quick_facts and about.quick_facts.length %}
+        <ul>
+          {% for item in about.quick_facts %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </article>
+
+    <article class="about-card">
+      <h3>{{ about.professional_highlights_title }}</h3>
+      {% if about.professional_highlights and about.professional_highlights.length %}
+        <ul>
+          {% for item in about.professional_highlights %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </article>
+
+    <article class="about-card">
+      <h3>{{ about.scientific_achievements_title }}</h3>
+      {% if about.scientific_achievements and about.scientific_achievements.length %}
+        <ul>
+          {% for item in about.scientific_achievements %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </article>
+  </div>
 </section>

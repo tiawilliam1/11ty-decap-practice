@@ -50,6 +50,50 @@
           }
         });
       }
+
+      // Prevent stale #services hashes from forcing auto-scroll on refresh.
+      if (window.location.pathname === "/" && window.location.hash === "#services") {
+        history.replaceState(null, "", window.location.pathname + window.location.search);
+        window.addEventListener(
+          "load",
+          () => window.scrollTo({ top: 0, left: 0, behavior: "auto" }),
+          { once: true }
+        );
+      }
+
+      const slowLinks = document.querySelectorAll("[data-slow-scroll]");
+      const easeInOut = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+
+      slowLinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const targetId = link.getAttribute("href");
+          if (!targetId || !targetId.startsWith("#")) return;
+
+          const target = document.querySelector(targetId);
+          if (!target) return;
+
+          event.preventDefault();
+
+          const startY = window.scrollY;
+          const targetY = target.getBoundingClientRect().top + window.scrollY - 16;
+          const duration = 1200;
+          const startTime = performance.now();
+
+          const animateScroll = (now) => {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = easeInOut(progress);
+            const nextY = startY + (targetY - startY) * eased;
+            window.scrollTo(0, nextY);
+
+            if (progress < 1) {
+              requestAnimationFrame(animateScroll);
+            }
+          };
+
+          requestAnimationFrame(animateScroll);
+        });
+      });
     </script>
   </body>
 </html>
