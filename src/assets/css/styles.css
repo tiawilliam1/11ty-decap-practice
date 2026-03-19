@@ -150,7 +150,7 @@
     z-index: 1;
     max-width: 980px;
     width: 100%;
-    margin: 0 auto;
+    margin: 0px auto 4%;
     padding: 0;
   }
 
@@ -162,7 +162,7 @@
   }
 
   .hero-copy h1 {
-    margin: 0 0 16px;
+    margin: 5 0 16px;
     font-size: clamp(34px, 5.2vw, 72px);
     font-weight: 400;
     line-height: 1.10;
@@ -254,7 +254,7 @@
   }
   
   .hero h2 {
-    margin: 0 0 24px;
+    margin: 0 0 83px;
     color: #374369;
     max-width: 56ch;
     font-size: 1.20rem;
@@ -294,6 +294,7 @@
     display: block;
     width: 78px;
     height: auto;
+    margin-top: -11%;
   }
 
   .hero-cta-strip {
@@ -306,6 +307,7 @@
     justify-content: center;
     gap: 0;
     width: min(980px, calc(100% - 56px));
+    margin-bottom:2%;
   }
 
   .hero-cta-strip a {
