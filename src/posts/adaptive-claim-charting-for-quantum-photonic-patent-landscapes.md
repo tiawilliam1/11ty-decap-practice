@@ -1,5 +1,5 @@
 ---
-title: Adaptive Claim-Charting for Quantum-Photonic Landscapes
+title: Adaptive Claim-Charting for Photonic Landscapes
 abstract: This paper introduces a semi-automated claim-charting workflow for
   quantum-photonic inventions, combining transformer-based semantic matching
   with expert legal review. In a benchmark of 1,200 prior-art documents, the
