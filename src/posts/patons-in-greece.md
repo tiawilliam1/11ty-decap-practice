@@ -1,7 +1,7 @@
 ---
 title: Nikos Engonopoulos
-description: Poet, artist & muse.
-featured_image: /uploads/nikos_engonopoulos.jpg
+abstract: Poet, artist & muse.
+image: /uploads/nikos_engonopoulos.jpg
 tags:
   - posts
 ---

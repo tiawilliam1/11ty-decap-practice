@@ -38,7 +38,7 @@ collections:
             field: { label: "Achievement", name: "item", widget: "string" }
 
   - name: "posts"
-    label: "Articles"
+    label: "Publications"
     folder: "src/posts"
     create: true
     slug: "{{slug}}"
@@ -46,7 +46,8 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string", required: false }
-      - { label: "Featured Image", name: "featured_image", widget: "image", required: false }
+      - { label: "Abstract", name: "abstract", widget: "text", required: false }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Publication Link", name: "publication_link", widget: "string", required: false, hint: "Full URL, e.g. https://doi.org/... or https://journal.com/article" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "hidden", default: ["posts"] }
