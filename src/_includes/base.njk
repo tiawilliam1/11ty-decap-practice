@@ -94,6 +94,26 @@
           requestAnimationFrame(animateScroll);
         });
       });
+
+      const servicesGrid = document.querySelector(".services-grid");
+
+      if (servicesGrid && "IntersectionObserver" in window) {
+        servicesGrid.classList.add("observe-inview");
+
+        const servicesObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+
+              servicesGrid.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.2 }
+        );
+
+        servicesObserver.observe(servicesGrid);
+      }
     </script>
   </body>
 </html>
