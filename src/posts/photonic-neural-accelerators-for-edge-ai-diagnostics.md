@@ -5,7 +5,7 @@ abstract: This study presents a low-power photonic accelerator architecture for
   multiplexing with compact interferometric units to reduce inference latency by
   38% compared to baseline electronic accelerators while maintaining clinically
   acceptable sensitivity.
-image: /uploads/filler.jpg
+image: /uploads/chatgpt-image-mar-22-2026-at-09_08_10-pm.png
 publication_link: https://example.org/publications/photonic-neural-accelerators-2026
 tags:
   - posts
