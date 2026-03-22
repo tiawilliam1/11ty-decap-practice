@@ -4,15 +4,44 @@ title: Contact
 permalink: /contact/
 ---
 
-<section class="page-intro">
-  <h1>Contact Page</h1>
-  <p>
-    Reach out to discuss patent strategy, prior-art analysis, or a specific
-    technical-IP challenge.
-  </p>
-</section>
+<section class="contact-page">
+  <div class="contact-shell">
+    <div class="contact-main">
+      <p class="contact-kicker">Contact Form</p>
+      <h1>Let us discuss your IP and deep-tech goals.</h1>
+      <p class="contact-lead">
+        Share a few details and I will respond with the best next step for your case.
+      </p>
 
-<section class="page-content">
-  <h2>Get in Touch</h2>
-  <p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p>
+      <form class="contact-form" name="contact" method="post" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hidden-field">
+          <label>Do not fill this out if you are human: <input name="bot-field" /></label>
+        </p>
+
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+
+        <label for="company">Company</label>
+        <input id="company" name="company" type="text" />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+
+        <button type="submit" class="contact-submit">Send Message</button>
+      </form>
+    </div>
+
+    <aside class="contact-side" netlify>
+      <h2>Direct Contact</h2>
+      <p><strong>Email:</strong> <a href="mailto:tiayw10@gmail.com">tiayw10@gmail.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+300000000000">+30 000 000 0000</a></p>
+      <p><strong>LinkedIn:</strong> <a href="#" rel="noopener noreferrer">Optional</a></p>
+
+      <a class="consultation-btn" href="/contact/">Book a 30-minute consultation</a>
+    </aside>
+  </div>
 </section>
