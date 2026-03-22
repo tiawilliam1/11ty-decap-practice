@@ -114,6 +114,26 @@
 
         servicesObserver.observe(servicesGrid);
       }
+
+      const whyWork = document.querySelector(".why-work");
+
+      if (whyWork && "IntersectionObserver" in window) {
+        whyWork.classList.add("observe-inview");
+
+        const whyWorkObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+
+              whyWork.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.28 }
+        );
+
+        whyWorkObserver.observe(whyWork);
+      }
     </script>
   </body>
 </html>

@@ -683,6 +683,13 @@
       transform: none;
       animation: none;
     }
+
+    .why-intro p,
+    .why-point p {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
   }
 
   .why-work {
@@ -742,6 +749,18 @@
     font-size: 1.02rem;
     line-height: 1.68;
     color: #455279;
+    opacity: 0;
+    transform: translateX(-22px);
+    animation: whyTextSlideIn 620ms ease forwards;
+    animation-delay: 70ms;
+  }
+
+  .why-work.observe-inview .why-intro p {
+    animation-play-state: paused;
+  }
+
+  .why-work.observe-inview.is-visible .why-intro p {
+    animation-play-state: running;
   }
 
   .why-points {
@@ -767,6 +786,40 @@
     font-size: 0.98rem;
     line-height: 1.7;
     max-width: 60ch;
+    opacity: 0;
+    transform: translateX(-22px);
+    animation: whyTextSlideIn 620ms ease forwards;
+  }
+
+  .why-work.observe-inview .why-point p {
+    animation-play-state: paused;
+  }
+
+  .why-work.observe-inview.is-visible .why-point p {
+    animation-play-state: running;
+  }
+
+  .why-point:nth-child(1) p {
+    animation-delay: 120ms;
+  }
+
+  .why-point:nth-child(2) p {
+    animation-delay: 260ms;
+  }
+
+  .why-point:nth-child(3) p {
+    animation-delay: 400ms;
+  }
+
+  @keyframes whyTextSlideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-22px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 
   @media (max-width: 980px) {
