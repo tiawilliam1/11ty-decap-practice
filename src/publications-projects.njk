@@ -4,30 +4,32 @@ title: Publications & Projects
 permalink: /publications-projects/
 ---
 
-<section class="page-intro">
+<section>
   <h1>Publications &amp; Projects</h1>
   <p>
-    Selected writing, technical insights, and project work focused on patent
-    strategy in deep-tech domains.
+    Research, analysis, and technical insight for deep-tech IP strategy.
   </p>
-</section>
 
-<section class="page-content">
-  <h2>All Publications</h2>
+  <div class="section-head section-head--publications">
+    <h2>All Publications</h2>
+  </div>
+
   {% if collections.posts and collections.posts.length %}
     <div class="cards">
       {% for post in collections.posts | reverse %}
         {% set publicationUrl = post.data.publication_link or post.url %}
         <article class="card">
           <h3>{{ post.data.title }}</h3>
-          {% if post.data.image or post.data.featured_image %}
-            <img src="{{ post.data.image or post.data.featured_image }}" alt="" />
-          {% endif %}
           {% if post.data.abstract or post.data.description %}
             <p>{{ post.data.abstract or post.data.description }}</p>
           {% endif %}
+          {% if post.data.image or post.data.featured_image %}
+            <img src="{{ post.data.image or post.data.featured_image }}" alt="" />
+          {% endif %}
           <p>
-            <a href="{{ publicationUrl }}" target="_blank" rel="noopener noreferrer">Go to publication</a>
+            <a href="{{ publicationUrl }}" {% if post.data.publication_link %}target="_blank" rel="noopener noreferrer"{% endif %}>
+              View publication →
+            </a>
           </p>
         </article>
       {% endfor %}

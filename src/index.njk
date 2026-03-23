@@ -1,132 +1,18 @@
 ---
 layout: base.njk
-title: Home
+title: Coming Soon
+permalink: /
 ---
 
-<section class="hero" id="home">
-  <div class="hero-card hero-card--cover">
-    <div class="hero-copy">
-      <h1 class="hero-title">Patent Intelligence for High-Stakes Innovation.</h1>
-      <h2>
-      From semiconductor physics to strategic IP decisions — I help companies and IP firms secure, evaluate, and navigate complex technologies.
-      </h2>
-    </div>
-    <nav class="hero-cta-strip" aria-label="Hero quick links">
-      <a href="/services/">Strategic Services</a>
-      <a href="/publications-projects/">Publications &amp; Projects</a>
-      <a href="/contact/">Book a Consultation</a>
-    </nav>
-    <a class="hero-scroll" href="#services" data-slow-scroll aria-label="Scroll to Services">
-      <img class="hero-scroll-img" src="/assets/img/scroll.png" alt="" aria-hidden="true" />
-    </a>
+<section style="min-height: 70vh; display: grid; place-items: center; text-align: center; padding: 2rem 1rem;">
+  <div style="max-width: 760px;">
+    <h1 style="margin-bottom: 1rem;">We are preparing something exceptional.</h1>
+    <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.25rem;">
+      This website is currently in private preparation mode and will launch soon.
+    </p>
+    <p style="font-size: 1.05rem; line-height: 1.6; margin: 0;">
+      For urgent inquiries, email
+      <a href="mailto:tiayw10@gmail.com">tiayw10@gmail.com</a>.
+    </p>
   </div>
-</section>
-
-<section class="services" id="services">
-  <div class="services-head">
-    <h2>Our Services</h2>
-    <h3>Strategic support across the full patent lifecycle.</h3>
-  </div>
-  <div class="services-grid">
-    <article class="service-card">
-      <div class="service-text">
-        <h3>Patent Research &amp; Analysis</h3>
-        <ul>
-          <li>Patentability searches</li>
-          <li>Freedom-to-Operate (FTO)</li>
-          <li>State-of-the-Art / Prior Art</li>
-          <li>Validity / Invalidity</li>
-          <li>Patent landscapes</li>
-          <li>Competitor IP strategy analysis</li>
-        </ul>
-      </div>
-    </article>
-    <article class="service-card">
-      <div class="service-text">
-        <h3>Deep-Tech Expertise</h3>
-        <ul>
-          <li>Semiconductor physics</li>
-          <li>Optoelectronics &amp; photonics</li>
-          <li>Laser &amp; LED technologies</li>
-          <li>Nano-photonics</li>
-          <li>Automotive cockpit innovation (HUD, displays, plastronics)</li>
-        </ul>
-      </div>
-    </article>
-    <article class="service-card">
-      <div class="service-text">
-        <h3>IP Strategy Support</h3>
-        <ul>
-          <li>R&amp;D patent training (ORBIT, search methodology)</li>
-          <li>Patent monitoring &amp; alerts</li>
-          <li>AI-assisted patent search evaluation</li>
-          <li>Collaboration with patent attorneys for drafting &amp; office actions</li>
-        </ul>
-      </div>
-    </article>
-  </div>
-  <div class="services-cta-row">
-    <a class="services-quote-btn" href="/contact/">Request a Quote</a>
-  </div>
-</section>
-
-
-<section class="why-work" id="why-work">
-  <div class="why-work-inner">
-    <div class="why-intro">
-      <p class="why-kicker">Why Work With Me</p>
-      <h2>Technical depth with strategic clarity.</h2>
-      <p>
-        I combine hands-on deep-tech expertise with practical patent strategy, so your decisions stay grounded in both scientific rigor and business outcomes.
-      </p>
-    </div>
-
-    <div class="why-points">
-      <article class="why-point">
-        <h3>Deep Domain Fluency</h3>
-        <p>
-          Semiconductor physics, optoelectronics, photonics, and complex hardware are not generic domains. I work directly at that technical layer.
-        </p>
-      </article>
-      <article class="why-point">
-        <h3>IP Strategy That Executes</h3>
-        <p>
-          Every analysis is tied to concrete objectives: stronger filing decisions, clearer freedom-to-operate paths, and more defensible portfolio positions.
-        </p>
-      </article>
-      <article class="why-point">
-        <h3>Decision-Ready Communication</h3>
-        <p>
-          You get concise, structured output your teams can act on quickly without losing nuance where it matters most.
-        </p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="articles-preview" id="publications">
-  <div class="section-head section-head--publications">
-    <h2>Latest Publications</h2>
-    <p class="section-subline">Insights, case studies, and technical publications.</p>
-    <a href="/publications-projects/">View all publications →</a>
-  </div>
-
-  {% if collections.posts and collections.posts.length %}
-    <div class="cards">
-      {% for post in collections.posts | reverse %}
-        {% if loop.index0 < 3 %}
-          <article class="card">
-            {% set publicationUrl = post.data.publication_link or post.url %}
-            <h3><a href="{{ publicationUrl }}" {% if post.data.publication_link %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ post.data.title }}</a></h3>
-            {% if post.data.abstract or post.data.description %}<p>{{ post.data.abstract or post.data.description }}</p>{% endif %}
-            {% if post.data.image or post.data.featured_image %}
-              <img src="{{ post.data.image or post.data.featured_image }}" alt="" />
-            {% endif %}
-          </article>
-        {% endif %}
-      {% endfor %}
-    </div>
-  {% else %}
-    <p>No publications yet.</p>
-  {% endif %}
 </section>
