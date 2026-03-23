@@ -28,7 +28,22 @@
     </header>
 
     <main class="wrap">
-      {{ content | safe }}
+      {% if site and site.maintenanceMode and page.url != "/" %}
+        <section style="min-height: 70vh; display: grid; place-items: center; text-align: center; padding: 2rem 1rem;">
+          <div style="max-width: 760px;">
+            <h1 style="margin-bottom: 1rem;">We are preparing something exceptional.</h1>
+            <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.25rem;">
+              This website is currently in private preparation mode and will launch soon.
+            </p>
+            <p style="font-size: 1.05rem; line-height: 1.6; margin: 0;">
+              For urgent inquiries, email
+              <a href="mailto:tiayw10@gmail.com">tiayw10@gmail.com</a>.
+            </p>
+          </div>
+        </section>
+      {% else %}
+        {{ content | safe }}
+      {% endif %}
     </main>
 
     <footer class="site-footer">
