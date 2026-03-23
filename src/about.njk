@@ -5,55 +5,60 @@ permalink: /about/
 ---
 
 <section class="about-page">
-  <div class="about-hero">
-    <p class="about-kicker">{{ about.hero_kicker }}</p>
-    <h1>{{ about.page_title }}</h1>
-    <p class="about-short">{{ about.short_intro }}</p>
+  <div class="about-hero about-hero--cover">
+    <div class="about-hero-inner">
+      <h1>{{ about.name }}</h1>
+      <p class="about-short">{{ about.short_intro }}</p>
+    </div>
+
+    <nav class="about-cta-strip" aria-label="About quick links">
+      <a href="#background">Background</a>
+      <a href="#highlights-achievements">Highlights &amp; Achievements</a>
+      <a href="/contact/">Book a Consultation</a>
+    </nav>
   </div>
 
-  <section class="about-split">
-    <article class="about-profile">
-      <h2>{{ about.name }}</h2>
+  <section class="about-section about-two-col-section about-two-col-section--purple about-intro-section" id="background">
+    <article class="about-panel about-intro-panel">
+      <h2>{{ about.full_name }}</h2>
       <p class="about-role">{{ about.role }}</p>
-      <p>{{ about.intro_text }}</p>
+      <h2 class="about-background-text">{{ about.intro_text }}</h2>
+      <a class="about-profile-cta" href="/contact/">Discuss Your Project</a>
     </article>
-    <figure class="about-image">
+
+    <figure class="about-section-image">
       <img src="{{ about.profile_image }}" alt="{{ about.profile_image_alt }}" />
     </figure>
   </section>
 
-  <div class="about-grid about-grid--three">
-    <article class="about-card about-card--facts">
-      <h3>{{ about.quick_facts_title }}</h3>
-      {% if about.quick_facts and about.quick_facts.length %}
-        <ul>
-          {% for item in about.quick_facts %}
-            <li>{{ item }}</li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    </article>
-
-    <article class="about-card">
-      <h3>{{ about.professional_highlights_title }}</h3>
+  <section class="about-section about-two-col-section about-two-col-section--light" id="highlights-achievements">
+    <div class="about-strip-head">
+      <h2>{{ about.professional_highlights_title }}</h2>
+      <p>{{ about.professional_highlights_subline }}</p>
+    </div>
+    <article class="about-card about-panel">
       {% if about.professional_highlights and about.professional_highlights.length %}
         <ul>
           {% for item in about.professional_highlights %}
-            <li>{{ item }}</li>
+            <li><span>{{ item }}</span></li>
           {% endfor %}
         </ul>
       {% endif %}
     </article>
-
-    <article class="about-card">
-      <h3>{{ about.scientific_achievements_title }}</h3>
-      {% if about.scientific_achievements and about.scientific_achievements.length %}
-        <ul>
+    <div class="about-strip-wrap">
+      <div class="about-strip-head">
+        <h2>{{ about.scientific_achievements_title }}</h2>
+        <p>{{ about.scientific_achievements_subline }}</p>
+      </div>
+      <div class="about-highlights-strip">
+        {% if about.scientific_achievements and about.scientific_achievements.length %}
           {% for item in about.scientific_achievements %}
-            <li>{{ item }}</li>
+            <article class="about-highlight-item">
+              <p>{{ item }}</p>
+            </article>
           {% endfor %}
-        </ul>
-      {% endif %}
-    </article>
-  </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
 </section>

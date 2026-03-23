@@ -1,8 +1,8 @@
 {
-  "hero_kicker": "About",
   "page_title": "About Me",
-  "short_intro": "I am Meletis Mexis, PhD, a patent analyst and engineer specializing in deep-tech innovation.",
-  "name": "Meletis Mexis, PhD",
+  "short_intro": "Where science meets strategic IP decisions.",
+  "name": "About DeepTech",
+  "full_name": "Meletis Mexis, PhD",
   "role": "Patent Analyst and Engineer",
   "intro_text": "With a dual background in quantum physics, photonics, and intellectual property, I help companies transform complex technologies into strong, defensible IP assets.",
   "profile_image": "/assets/img/filler.JPG",
@@ -15,6 +15,7 @@
     "10 international conference presentations"
   ],
   "professional_highlights_title": "Professional Highlights",
+  "professional_highlights_subline": "Key industry roles and contributions across patent strategy, analysis, and deep-tech innovation.",
   "professional_highlights": [
     "Senior Patent Analyst at Faurecia (2017-2025)",
     "Patent Engineer at CNRS Innovation (2025)",
@@ -22,7 +23,10 @@
     "Marie-Curie fellow"
   ],
   "scientific_achievements_title": "Scientific Achievements",
+  "scientific_achievements_subline": "Selected breakthroughs and peer-reviewed contributions in photonics and semiconductor innovation.",
   "scientific_achievements": [
+    "21 peer-reviewed publications",
+    "10 international conference presentations",
     "First deep-UV micro-laser (Nature Scientific Reports, 2016)",
     "GaN optical resonators (Opt. Lett 2011, Appl. Phys. Lett 2011)"
   ]

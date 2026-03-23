@@ -149,6 +149,59 @@
 
         whyWorkObserver.observe(whyWork);
       }
+
+      const highlightsAchievements = document.querySelector("#highlights-achievements");
+
+      if (highlightsAchievements && "IntersectionObserver" in window) {
+        highlightsAchievements.classList.add("observe-inview");
+
+        const revealItems = highlightsAchievements.querySelectorAll(
+          ".about-card li span"
+        );
+
+        revealItems.forEach((item, index) => {
+          item.style.setProperty("--reveal-delay", `${index * 220}ms`);
+        });
+
+        const highlightsObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+
+              highlightsAchievements.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.2 }
+        );
+
+        highlightsObserver.observe(highlightsAchievements);
+      }
+
+      const achievementsStrip = document.querySelector("#highlights-achievements .about-highlights-strip");
+
+      if (achievementsStrip && "IntersectionObserver" in window) {
+        achievementsStrip.classList.add("observe-inview");
+
+        const stripItems = achievementsStrip.querySelectorAll(".about-highlight-item p");
+        stripItems.forEach((item, index) => {
+          item.style.setProperty("--reveal-delay", `${index * 220}ms`);
+        });
+
+        const stripObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+
+              achievementsStrip.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.3 }
+        );
+
+        stripObserver.observe(achievementsStrip);
+      }
     </script>
   </body>
 </html>
