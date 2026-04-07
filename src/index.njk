@@ -1,16 +1,18 @@
 ---
 layout: base.njk
 title: Home
+home_theme: alt
 ---
 
 <section class="hero" id="home">
   <div class="hero-card hero-card--cover">
     <div class="hero-copy">
-      <h1 class="hero-title">Patent Intelligence for High-Stakes Innovation.</h1>
-      <h2>
+      <h1 class="hero-title" data-reveal="up">Patent Intelligence for High-Stakes Innovation.</h1>
+      <h2 data-reveal="up" style="--reveal-delay: 120ms;">
       From semiconductor physics to strategic IP decisions — I help companies and IP firms secure, evaluate, and navigate complex technologies.
       </h2>
     </div>
+    <img class="hero-mark" src="/assets/img/Symmetrical%20blue%20gradient%20logo%20design.png" alt="" aria-hidden="true" />
     <nav class="hero-cta-strip" aria-label="Hero quick links">
       <a href="/services/">Strategic Services</a>
       <a href="/publications-projects/">Publications &amp; Projects</a>
@@ -23,7 +25,7 @@ title: Home
 </section>
 
 <section class="services" id="services">
-  <div class="services-head">
+  <div class="services-head" data-reveal="up">
     <h2>Our Services</h2>
     <h3>Strategic support across the full patent lifecycle.</h3>
   </div>
@@ -65,13 +67,13 @@ title: Home
       </div>
     </article>
   </div>
-  <div class="services-cta-row">
+  <div class="services-cta-row" data-reveal="up" style="--reveal-delay: 130ms;">
     <a class="services-quote-btn" href="/contact/">Request a Quote</a>
   </div>
 </section>
 
 <section class="why-work" id="why-work">
-  <div class="why-work-inner">
+  <div class="why-work-inner" data-reveal="up">
     <div class="why-intro">
       <p class="why-kicker">Why Work With Me</p>
       <h2>Technical depth with strategic clarity.</h2>
@@ -128,4 +130,46 @@ title: Home
   {% else %}
     <p>No publications yet.</p>
   {% endif %}
+</section>
+
+<section class="industries-clients-home" id="industries-clients">
+  <div class="section-head section-head--publications industries-clients-head" data-reveal="up">
+    <h2>Industries &amp; Clients</h2>
+    <p class="section-subline">Support for R&amp;D teams, tech companies, patent attorneys, and IP firms.</p>
+    <a class="industries-clients-cta" href="/industries-clients/">View industries &amp; clients →</a>
+  </div>
+
+  <div class="industries-clients-stream">
+    <article class="industries-clients-item" data-reveal="up" style="--reveal-delay: 80ms;">
+      <h3>For R&amp;D Teams &amp; Tech Companies</h3>
+      <ul>
+        <li>Accelerate innovation cycles</li>
+        <li>Identify patentable breakthroughs</li>
+        <li>Avoid costly infringement</li>
+        <li>Understand competitor IP strategies</li>
+      </ul>
+    </article>
+
+    <article class="industries-clients-item" data-reveal="up" style="--reveal-delay: 170ms;">
+      <h3>For Patent Attorneys &amp; IP Firms</h3>
+      <ul>
+        <li>Highprecision prior art</li>
+        <li>Deeptech technical support</li>
+        <li>Reliable FTO &amp; validity analysis</li>
+        <li>Collaboration on drafting &amp; office actions</li>
+      </ul>
+    </article>
+
+    <article class="industries-clients-item" data-reveal="up" style="--reveal-delay: 260ms;">
+      <h3>Industries served</h3>
+      <ul>
+        <li>Automotive</li>
+        <li>Semiconductors</li>
+        <li>Photonics</li>
+        <li>Displays &amp; optoelectronics</li>
+        <li>Advanced materials</li>
+        <li>Deeptech startups</li>
+      </ul>
+    </article>
+  </div>
 </section>

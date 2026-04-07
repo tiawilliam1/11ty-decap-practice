@@ -8,11 +8,11 @@
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
 
-  <body>
+  <body{% if page.url == "/" and home_theme %} class="home-theme-{{ home_theme }}"{% endif %}>
     <header class="site-header">
       <div class="wrap header-inner">
         <a class="brand" href="/" aria-label="Deep-Tech home">
-          <img src="/assets/img/otherlogo1.png" alt="Deep Tech logo" />
+          <img src="{% if page.url == '/' and home_theme == 'alt' %}/assets/img/logo4.png{% else %}/assets/img/otherlogo1.png{% endif %}" alt="Deep Tech logo" />
         </a>
 
         <nav class="nav" aria-label="Primary">
@@ -23,7 +23,20 @@
           <a href="/publications-projects/" {% if page.url == "/publications-projects/" %}aria-current="page"{% endif %}>Publications &amp; Projects</a>
         </nav>
 
-        <a class="cta-pill" href="/contact/">Contact</a>
+        <div class="header-actions">
+          <details class="lang-switch">
+            <summary aria-label="Language selector">
+              <span class="lang-switch-icon" aria-hidden="true">🌐</span>
+              <span class="lang-switch-label">EN</span>
+              <span class="lang-switch-caret" aria-hidden="true">▾</span>
+            </summary>
+            <div class="lang-options">
+              <a href="#" aria-disabled="true">English</a>
+              <a href="#" aria-disabled="true">French</a>
+            </div>
+          </details>
+          <a class="cta-pill" href="/contact/">Contact</a>
+        </div>
       </div>
     </header>
 
@@ -36,7 +49,7 @@
         <div class="footer-top">
           <div class="footer-brand">
             <a class="footer-logo-link" href="/" aria-label="Patent Engineer home">
-              <img src="/assets/img/otherlogo1.png" alt="Patent Engineer logo" />
+              <img src="{% if page.url == '/' and home_theme == 'alt' %}/assets/img/logo4.png{% else %}/assets/img/otherlogo1.png{% endif %}" alt="Patent Engineer logo" />
             </a>
             <div class="footer-brand-copy">
               <p class="footer-name">Meletis Mexis, PhD</p>
@@ -46,7 +59,7 @@
 
           <div class="footer-contact">
             <p class="footer-contact-label">Contact</p>
-            <a href="mailto:tiayw10@gmail.com">tiayw10@gmail.com</a>
+            <a href="mailto:meletismexis@google-mail.com">meletismexis@google-mail.com</a>
           </div>
         </div>
 
@@ -79,6 +92,30 @@
           () => window.scrollTo({ top: 0, left: 0, behavior: "auto" }),
           { once: true }
         );
+      }
+
+      document.documentElement.classList.add("reveal-ready");
+
+      const revealItems = document.querySelectorAll("[data-reveal]");
+
+      if (revealItems.length) {
+        if ("IntersectionObserver" in window) {
+          const revealObserver = new IntersectionObserver(
+            (entries, observer) => {
+              entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              });
+            },
+            { threshold: 0.16, rootMargin: "0px 0px -8% 0px" }
+          );
+
+          revealItems.forEach((item) => revealObserver.observe(item));
+        } else {
+          revealItems.forEach((item) => item.classList.add("is-visible"));
+        }
       }
 
       const slowLinks = document.querySelectorAll("[data-slow-scroll]");
@@ -153,6 +190,26 @@
         );
 
         whyWorkObserver.observe(whyWork);
+      }
+
+      const articlesPreview = document.querySelector(".articles-preview");
+
+      if (articlesPreview && "IntersectionObserver" in window) {
+        articlesPreview.classList.add("observe-inview");
+
+        const publicationsObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+
+              articlesPreview.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.2 }
+        );
+
+        publicationsObserver.observe(articlesPreview);
       }
 
       const servicesListGrid = document.querySelector(".services-list-grid");
@@ -232,6 +289,7 @@
 
         stripObserver.observe(achievementsStrip);
       }
+
     </script>
   </body>
 </html>
