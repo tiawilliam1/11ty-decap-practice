@@ -12,7 +12,7 @@
     <header class="site-header">
       <div class="wrap header-inner">
         <a class="brand" href="/" aria-label="Deep-Tech home">
-          <img src="/assets/img/logo.png" alt="Deep Tech logo" />
+          <img src="/assets/img/otherlogo1.png" alt="Deep Tech logo" />
         </a>
 
         <nav class="nav" aria-label="Primary">
@@ -28,27 +28,32 @@
     </header>
 
     <main class="wrap">
-      {% if site and site.maintenanceMode and page.url != "/" %}
-        <section style="min-height: 70vh; display: grid; place-items: center; text-align: center; padding: 2rem 1rem;">
-          <div style="max-width: 760px;">
-            <h1 style="margin-bottom: 1rem;">We are preparing something exceptional.</h1>
-            <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.25rem;">
-              This website is currently in private preparation mode and will launch soon.
-            </p>
-            <p style="font-size: 1.05rem; line-height: 1.6; margin: 0;">
-              For urgent inquiries, email
-              <a href="mailto:tiayw10@gmail.com">tiayw10@gmail.com</a>.
-            </p>
-          </div>
-        </section>
-      {% else %}
-        {{ content | safe }}
-      {% endif %}
+      {{ content | safe }}
     </main>
 
     <footer class="site-footer">
       <div class="wrap footer-inner">
-        <small>© {{ "now" | date("yyyy") }} Patent Engineer</small>
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a class="footer-logo-link" href="/" aria-label="Patent Engineer home">
+              <img src="/assets/img/otherlogo1.png" alt="Patent Engineer logo" />
+            </a>
+            <div class="footer-brand-copy">
+              <p class="footer-name">Meletis Mexis, PhD</p>
+              <p class="footer-role">Patent Analyst and Engineer</p>
+            </div>
+          </div>
+
+          <div class="footer-contact">
+            <p class="footer-contact-label">Contact</p>
+            <a href="mailto:tiayw10@gmail.com">tiayw10@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <small>© {{ "now" | date("yyyy") }} Patent Engineer</small>
+          <small>Powered by Tia William</small>
+        </div>
       </div>
     </footer>
 
@@ -148,6 +153,31 @@
         );
 
         whyWorkObserver.observe(whyWork);
+      }
+
+      const servicesListGrid = document.querySelector(".services-list-grid");
+
+      if (servicesListGrid && "IntersectionObserver" in window) {
+        servicesListGrid.classList.add("observe-inview");
+
+        const serviceCards = servicesListGrid.querySelectorAll(".services-feature-card");
+        serviceCards.forEach((card, index) => {
+          card.style.setProperty("--services-delay", `${index * 180}ms`);
+        });
+
+        const servicesListObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+
+              servicesListGrid.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.2 }
+        );
+
+        servicesListObserver.observe(servicesListGrid);
       }
 
       const highlightsAchievements = document.querySelector("#highlights-achievements");

@@ -4,37 +4,96 @@ title: Publications & Projects
 permalink: /publications-projects/
 ---
 
-<section>
-  <h1>Publications &amp; Projects</h1>
-  <p>
-    Research, analysis, and technical insight for deep-tech IP strategy.
-  </p>
+<section class="publications-page">
+  <div class="about-hero about-hero--cover publications-hero">
+    <div class="about-hero-inner publications-hero-inner">
+      <h1>Publications &amp; Projects</h1>
+      <p class="about-short">
+        Research, analysis, and technical insight for deep-tech IP strategy.
+      </p>
+    </div>
 
-  <div class="section-head section-head--publications">
-    <h2>All Publications</h2>
+    <nav class="about-cta-strip" aria-label="Publications quick links">
+      <a href="#all-publications">All Publications</a>
+      <a href="/contact/">Book a Consultation</a>
+    </nav>
   </div>
 
-  {% if collections.posts and collections.posts.length %}
-    <div class="cards">
-      {% for post in collections.posts | reverse %}
-        {% set publicationUrl = post.data.publication_link or post.url %}
-        <article class="card">
-          <h3>{{ post.data.title }}</h3>
-          {% if post.data.abstract or post.data.description %}
-            <p>{{ post.data.abstract or post.data.description }}</p>
-          {% endif %}
-          {% if post.data.image or post.data.featured_image %}
-            <img src="{{ post.data.image or post.data.featured_image }}" alt="" />
-          {% endif %}
-          <p>
-            <a href="{{ publicationUrl }}" {% if post.data.publication_link %}target="_blank" rel="noopener noreferrer"{% endif %}>
-              View publication →
-            </a>
-          </p>
-        </article>
-      {% endfor %}
+  <section class="publications-section" id="all-publications">
+    <div class="publications-head">
+      <h2>All Publications</h2>
     </div>
-  {% else %}
-    <p>No publications yet.</p>
-  {% endif %}
+
+    {% if collections.posts and collections.posts.length %}
+      <div class="publications-toolbar">
+        <label for="publications-sort">Arrange by</label>
+        <select id="publications-sort" class="publications-sort" aria-label="Arrange publications">
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+          <option value="title-asc">Title A-Z</option>
+          <option value="title-desc">Title Z-A</option>
+        </select>
+      </div>
+
+      <div class="publications-grid" id="publications-grid">
+        {% for post in collections.posts | reverse %}
+          {% set publicationUrl = post.data.publication_link or post.url %}
+          <article
+            class="publication-card"
+            data-index="{{ loop.index0 }}"
+            data-title="{{ (post.data.title or '') | lower | escape }}"
+          >
+            <div class="publication-content">
+              <h3>{{ post.data.title }}</h3>
+              {% if post.data.abstract or post.data.description %}
+                <p>{{ post.data.abstract or post.data.description }}</p>
+              {% endif %}
+              <p class="publication-link-wrap">
+                <a class="publication-link" href="{{ publicationUrl }}" {% if post.data.publication_link %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                  View publication
+                </a>
+              </p>
+            </div>
+            <div class="publication-media">
+              {% if post.data.image or post.data.featured_image %}
+                <img src="{{ post.data.image or post.data.featured_image }}" alt="" />
+              {% endif %}
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+      <script>
+        (() => {
+          const grid = document.getElementById("publications-grid");
+          const sortSelect = document.getElementById("publications-sort");
+          if (!grid || !sortSelect) return;
+
+          const cards = Array.from(grid.querySelectorAll(".publication-card"));
+
+          const sortCards = (mode) => {
+            const sorted = [...cards];
+
+            sorted.sort((a, b) => {
+              const aIdx = Number(a.dataset.index || 0);
+              const bIdx = Number(b.dataset.index || 0);
+              const aTitle = String(a.dataset.title || "");
+              const bTitle = String(b.dataset.title || "");
+
+              if (mode === "oldest") return bIdx - aIdx;
+              if (mode === "title-asc") return aTitle.localeCompare(bTitle);
+              if (mode === "title-desc") return bTitle.localeCompare(aTitle);
+              return aIdx - bIdx; // newest first
+            });
+
+            sorted.forEach((card) => grid.appendChild(card));
+          };
+
+          sortSelect.addEventListener("change", () => sortCards(sortSelect.value));
+          sortCards(sortSelect.value);
+        })();
+      </script>
+    {% else %}
+      <p class="publications-empty">No publications yet.</p>
+    {% endif %}
+  </section>
 </section>

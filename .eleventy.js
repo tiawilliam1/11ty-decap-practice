@@ -3,7 +3,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
   eleventyConfig.addPassthroughCopy({ "src/uploads": "uploads" });
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
-  eleventyConfig.addPassthroughCopy({ "src/_redirects": "_redirects" });
 
   // Posts collection
   eleventyConfig.addCollection("posts", (collectionApi) => {
