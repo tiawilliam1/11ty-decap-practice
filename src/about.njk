@@ -2,63 +2,87 @@
 layout: base.njk
 title: About Me
 permalink: /about/
+home_theme: alt
 ---
 
 <section class="about-page">
   <div class="about-hero about-hero--cover">
     <div class="about-hero-inner">
-      <h1>{{ about.name }}</h1>
-      <p class="about-short">{{ about.short_intro }}</p>
+      <h1 data-reveal="up">{{ about.page_title }}</h1>
+      <p class="about-short" data-reveal="up" style="--reveal-delay: 120ms;">{{ about.short_intro }}</p>
     </div>
 
     <nav class="about-cta-strip" aria-label="About quick links">
-      <a href="#background">Background</a>
-      <a href="#highlights-achievements">Highlights &amp; Achievements</a>
-      <a href="/contact/">Book a Consultation</a>
+      <a href="#opening" data-reveal="up" style="--reveal-delay: 200ms;">Meletis Mexis</a>
+      <a href="#career-timeline" data-reveal="up" style="--reveal-delay: 280ms;">Career Timeline</a>
+      <a href="#credentials" data-reveal="up" style="--reveal-delay: 360ms;">Credentials</a>
     </nav>
   </div>
 
-  <section class="about-section about-two-col-section about-two-col-section--purple about-intro-section" id="background">
-    <article class="about-panel about-intro-panel">
-      <h2>{{ about.full_name }}</h2>
-      <p class="about-role">{{ about.role }}</p>
-      <h2 class="about-background-text">{{ about.intro_text }}</h2>
-      <a class="about-profile-cta" href="/contact/">Discuss Your Project</a>
-    </article>
+  <section class="about-section about-opening-section" id="opening">
+    <div class="about-opening-layout">
+      <header class="about-opening-head" data-reveal="left">
+        <div class="about-opening-title">
+          <h2>{{ about.full_name }}</h2>
+          <p class="about-role">{{ about.role }}</p>
+        </div>
+      </header>
 
-    <figure class="about-section-image">
-      <img src="{{ about.profile_image }}" alt="{{ about.profile_image_alt }}" />
-    </figure>
-  </section>
-
-  <section class="about-section about-two-col-section about-two-col-section--light" id="highlights-achievements">
-    <div class="about-strip-head">
-      <h2>{{ about.professional_highlights_title }}</h2>
-      <p>{{ about.professional_highlights_subline }}</p>
-    </div>
-    <article class="about-card about-panel">
-      {% if about.professional_highlights and about.professional_highlights.length %}
-        <ul>
-          {% for item in about.professional_highlights %}
-            <li><span>{{ item }}</span></li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    </article>
-    <div class="about-strip-wrap">
-      <div class="about-strip-head">
-        <h2>{{ about.scientific_achievements_title }}</h2>
-        <p>{{ about.scientific_achievements_subline }}</p>
-      </div>
-      <div class="about-highlights-strip">
-        {% if about.scientific_achievements and about.scientific_achievements.length %}
-          {% for item in about.scientific_achievements %}
-            <article class="about-highlight-item">
-              <p>{{ item }}</p>
-            </article>
-          {% endfor %}
+      <div class="about-opening-story" data-reveal="up" style="--reveal-delay: 80ms;">
+        <p class="about-opening-paragraph">{{ about.opening_paragraph }}</p>
+        {% if about.quick_facts and about.quick_facts.length %}
+          <div class="about-opening-facts" aria-label="{{ about.quick_facts_title }}">
+            {% for item in about.quick_facts %}
+              <span class="about-opening-fact" data-reveal="soft" style="--reveal-delay: {{ 180 + (loop.index0 * 70) }}ms;">{{ item }}</span>
+            {% endfor %}
+          </div>
         {% endif %}
       </div>
+
+      <aside class="about-opening-aside" data-reveal="right" style="--reveal-delay: 120ms;">
+        <figure class="about-opening-avatar">
+          <img
+            src="{{ about.profile_image or '/assets/img/Profilepicfiller.png' }}"
+            alt="{{ about.profile_image_alt or 'Profile picture placeholder' }}"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+        <p class="about-opening-keyline">{{ about.opening_keyline }}</p>
+        <a class="about-opening-consult" href="/contact/">Book a Consultation</a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="about-section about-timeline-section" id="career-timeline">
+    <div class="about-section-head" data-reveal="up">
+      <h2>{{ about.career_timeline_title }}</h2>
+      <p>{{ about.career_timeline_subline }}</p>
+    </div>
+    <ol class="about-timeline-list">
+      {% for item in about.career_timeline %}
+        <li class="about-timeline-item" data-reveal="soft" style="--reveal-delay: {{ loop.index0 * 80 }}ms;">
+          <p class="about-timeline-year">{{ item.year }}</p>
+          <article class="about-timeline-card">
+            <h3>{{ item.role }}</h3>
+            <p>{{ item.highlights }}</p>
+          </article>
+        </li>
+      {% endfor %}
+    </ol>
+  </section>
+
+  <section class="about-section about-credentials-section" id="credentials">
+    <div class="about-section-head" data-reveal="up">
+      <h2>{{ about.credentials_title }}</h2>
+      <p>{{ about.credentials_subline }}</p>
+    </div>
+    <div class="about-credentials-panel" data-reveal="soft" style="--reveal-delay: 80ms;">
+      <ul class="about-credentials-list">
+        {% for item in about.credentials %}
+          <li data-reveal="soft" style="--reveal-delay: {{ loop.index0 * 60 }}ms;">{{ item }}</li>
+        {% endfor %}
+      </ul>
     </div>
   </section>
 </section>

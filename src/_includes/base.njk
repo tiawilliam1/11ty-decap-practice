@@ -8,11 +8,11 @@
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
 
-  <body{% if page.url == "/" and home_theme %} class="home-theme-{{ home_theme }}"{% endif %}>
+  <body{% if home_theme %} class="home-theme-{{ home_theme }}"{% endif %}>
     <header class="site-header">
       <div class="wrap header-inner">
         <a class="brand" href="/" aria-label="Deep-Tech home">
-          <img src="{% if page.url == '/' and home_theme == 'alt' %}/assets/img/logo4.png{% else %}/assets/img/otherlogo1.png{% endif %}" alt="Deep Tech logo" />
+          <img src="{% if home_theme == 'alt' %}/assets/img/TechnoGenesispreview.png{% else %}/assets/img/otherlogo1.png{% endif %}" alt="Deep Tech logo" />
         </a>
 
         <nav class="nav" aria-label="Primary">
@@ -49,7 +49,7 @@
         <div class="footer-top">
           <div class="footer-brand">
             <a class="footer-logo-link" href="/" aria-label="Patent Engineer home">
-              <img src="{% if page.url == '/' and home_theme == 'alt' %}/assets/img/logo4.png{% else %}/assets/img/otherlogo1.png{% endif %}" alt="Patent Engineer logo" />
+              <img src="{% if home_theme == 'alt' %}/assets/img/TechnoGenesispreview.png{% else %}/assets/img/otherlogo1.png{% endif %}" alt="Patent Engineer logo" />
             </a>
             <div class="footer-brand-copy">
               <p class="footer-name">Meletis Mexis, PhD</p>
@@ -59,7 +59,7 @@
 
           <div class="footer-contact">
             <p class="footer-contact-label">Contact</p>
-            <a href="mailto:meletismexis@google-mail.com">meletismexis@google-mail.com</a>
+            <a href="mailto:contact@technogensis.fr">contact@technogensis.fr</a>
           </div>
         </div>
 

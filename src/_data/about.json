@@ -2,10 +2,62 @@
   "page_title": "About Me",
   "short_intro": "Where science meets strategic IP decisions.",
   "name": "About DeepTech",
+  "opening_paragraph": "Meletis Mexis, PhD, is the founder of TechnoGenesis. A physicist turned patent information professional, he combines ten years of scientific research in quantum optoelectronics with eight years of industrial IP experience. Clients get direct access to a physicist who understands both device physics and patent claim language.",
+  "opening_keyline": "Clients get direct access to a physicist who understands both device physics and patent claim language.",
+  "career_timeline_title": "Career Timeline",
+  "career_timeline_subline": "A present-to-past view of leadership, certification, and deep-tech patent expertise.",
+  "career_timeline": [
+    {
+      "year": "2026",
+      "role": "TechnoGenesis, Founder",
+      "highlights": "Deep-tech patent search and analysis. Scientific collaboration with universities."
+    },
+    {
+      "year": "2026",
+      "role": "PEB FC3 Certification",
+      "highlights": "Certified in International Patent Law — CIPA (UK)."
+    },
+    {
+      "year": "2025",
+      "role": "CNRS Innovation, Patent Engineer",
+      "highlights": "Physics and mechanics IP portfolio management. Weekly patent committee reporting."
+    },
+    {
+      "year": "2017–2025",
+      "role": "Faurecia, Senior Patent Analyst",
+      "highlights": "Led patent analyst team. Patentability, FTO, landscaping, and patent monitoring for vehicle cockpit innovation."
+    },
+    {
+      "year": "2023",
+      "role": "QPIP Certification",
+      "highlights": "Qualified Patent Information Professional — international certification."
+    },
+    {
+      "year": "2010–2015",
+      "role": "CNRS Researcher and Marie-Curie Fellow",
+      "highlights": "Deep-UV micro-lasers, GaN-based optical resonators, and exciton-polariton ZnO lasers. 21 publications."
+    },
+    {
+      "year": "2009",
+      "role": "PhD in Physics",
+      "highlights": "Cardiff University, UK. Quantum optoelectronics."
+    }
+  ],
+  "credentials_title": "Credentials",
+  "credentials_subline": "Governance, certifications, publications, and peer recognition that support high-stakes IP advisory work.",
+  "credentials": [
+    "QPIP-certified (Qualified Patent Information Professional) (since 2023)",
+    "Certified in International Patent Law — PEB FC3, CIPA (UK) (since 2026)",
+    "QPIP exam board member (since 2025)",
+    "Member, CFIB — Francophone Patent Information Experts’ Group (since 2021)",
+    "Reviewer, Applied Physics Letters (since 2015)",
+    "21 peer-reviewed publications and 10 international conference presentations",
+    "Marie-Curie Fellow (2011–2012)"
+  ],
   "full_name": "Meletis Mexis, PhD",
   "role": "Patent Analyst and Engineer",
   "intro_text": "With a dual background in quantum physics, photonics, and intellectual property, I help companies transform complex technologies into strong, defensible IP assets.",
-  "profile_image": "/assets/img/filler.JPG",
+  "profile_image": "/assets/img/Profilepicfiller.png",
   "profile_image_alt": "Meletis profile or deep-tech laboratory visual",
   "quick_facts_title": "Quick Facts",
   "quick_facts": [
