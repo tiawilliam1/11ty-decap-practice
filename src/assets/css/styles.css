@@ -2876,23 +2876,42 @@ margin-top:4%;
     position: relative;
     width: min(1200px, calc(100% - 32px));
     margin: 0 auto;
-    padding: clamp(8px, 1.2vw, 16px) 0 0;
+    padding: clamp(10px, 1.4vw, 18px) 0 clamp(12px, 1.8vw, 24px);
+    isolation: isolate;
+  }
+
+  .services-section-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: linear-gradient(180deg, #f7fbff 0%, #eaf3ff 100%);
+    z-index: 0;
+  }
+
+  .services-section-page > * {
+    position: relative;
+    z-index: 1;
   }
 
   .services-page-head {
-    text-align: center;
-    max-width: 760px;
-    margin: 0 auto clamp(20px, 2.8vw, 34px);
-    padding: 0 12px;
+    text-align: left;
+    max-width: 980px;
+    margin: 0 auto clamp(14px, 2vw, 24px);
+    padding: 0;
   }
 
   .services-page-head h2 {
     margin: 0;
     color: #1a3968;
-    font-size: clamp(24px, 3vw, 34px);
-    line-height: 1.18;
+    font-size: clamp(34px, 4.4vw, 62px);
+    line-height: 1.08;
     letter-spacing: -0.02em;
-    font-weight: 600;
+    font-weight: 700;
+    text-transform: uppercase;
   }
 
   .services-page-head p {
@@ -2905,8 +2924,10 @@ margin-top:4%;
 
   .services-list-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: clamp(14px, 1.6vw, 20px);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(12px, 1.4vw, 16px);
+    max-width: 1120px;
+    margin: 0 auto;
   }
 
   .services-list-card {
@@ -2919,23 +2940,26 @@ margin-top:4%;
   }
 
   .services-feature-card {
-    padding: clamp(20px, 2vw, 26px);
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
+    padding: 0;
+    min-height: auto;
+    display: block;
+    border: 1px solid #d1def2;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #ffffff 0%, #f5f9ff 100%);
+    box-shadow: 0 10px 24px rgba(11, 31, 66, 0.09);
+    transition: transform 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
+    overflow: hidden;
   }
 
   .services-feature-card:hover {
-    transform: translateY(-2px);
-    border-color: #c2d6f1;
-    box-shadow: 0 16px 30px rgba(8, 24, 52, 0.14);
+    transform: translateY(-1px);
+    border-color: #bfd1ea;
+    box-shadow: 0 14px 28px rgba(11, 31, 66, 0.12);
   }
 
   .services-list-grid.observe-inview .services-feature-card {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(14px);
     animation: none;
   }
 
@@ -2962,6 +2986,87 @@ margin-top:4%;
     letter-spacing: -0.01em;
     line-height: 1.24;
     max-width: 20ch;
+  }
+
+  .service-expandable {
+    position: relative;
+  }
+
+  .service-expandable summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: clamp(16px, 1.8vw, 22px) clamp(16px, 1.9vw, 24px);
+  }
+
+  .service-expandable summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .service-expandable summary:focus-visible {
+    outline: 2px solid rgba(52, 108, 178, 0.45);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  .service-expandable-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    color: #1f4f8b;
+    font-size: clamp(1.2rem, 1.9vw, 1.8rem);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+  }
+
+  .service-expandable-icon {
+    position: relative;
+    flex: 0 0 auto;
+    width: 24px;
+    height: 24px;
+    margin-top: 0;
+    border-radius: 8px;
+    border: 1px solid #c2d4ee;
+    background: #edf4ff;
+  }
+
+  .service-expandable-icon::before,
+  .service-expandable-icon::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 10px;
+    height: 1.5px;
+    background: #1f4f8b;
+    transform: translate(-50%, -50%);
+    transition: transform 120ms ease;
+  }
+
+  .service-expandable-icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  .service-expandable[open] .service-expandable-icon::after {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  .service-expandable-body {
+    padding: 0 clamp(16px, 1.9vw, 24px) clamp(16px, 2vw, 24px);
+    border-top: 1px solid #d8e5f6;
+  }
+
+  .service-expandable-body p {
+    margin: 12px 0 0;
+    max-width: none;
+    color: #192538;
+    font-size: clamp(0.98rem, 1.02vw, 1.08rem);
+    line-height: 1.56;
+    font-weight: 470;
   }
 
   .services-card-lead {
@@ -3852,11 +3957,16 @@ font-weight: 500;
 
     .services-section-page {
       width: calc(100% - 24px);
-      padding: 8px 0 0;
+      padding: 10px 0 12px;
     }
 
     .services-page-head {
-      margin-bottom: 18px;
+      margin-bottom: 12px;
+    }
+
+    .services-page-head h2 {
+      font-size: clamp(2rem, 9.6vw, 2.85rem);
+      line-height: 1.08;
     }
 
     .services-page-head p {
@@ -3866,44 +3976,47 @@ font-weight: 500;
 
     .services-list-grid {
       grid-template-columns: 1fr;
-      gap: 12px;
+      gap: 10px;
     }
 
     .services-feature-card {
-      min-height: auto;
-      padding: 18px 16px;
-      gap: 10px;
+      padding: 0;
     }
 
     .services-list-grid.observe-inview .services-feature-card {
       transform: translateY(12px);
     }
 
-    .services-list-card h3 {
-      font-size: clamp(1.25rem, 6vw, 1.72rem);
-      max-width: none;
+    .service-expandable summary {
+      padding: 12px 12px;
+      gap: 10px;
     }
 
-    .services-card-lead {
-      font-size: 0.98rem;
-      line-height: 1.56;
+    .service-expandable-title {
+      font-size: clamp(1.08rem, 5.6vw, 1.44rem);
+      line-height: 1.2;
+      gap: 0;
     }
 
-    .services-subitem {
-      font-size: 0.97rem;
-      padding-top: 9px;
-      padding-bottom: 9px;
-      padding-left: 16px;
+    .service-expandable-icon {
+      width: 22px;
+      height: 22px;
+      margin-top: 0;
     }
 
-    .services-subitem:hover {
-      padding-left: 18px;
+    .service-expandable-icon::before,
+    .service-expandable-icon::after {
+      width: 8px;
     }
 
-    .services-learn-more {
-      min-height: 40px;
-      padding: 0 18px;
-      font-size: 0.86rem;
+    .service-expandable-body {
+      padding: 0 12px 14px;
+    }
+
+    .service-expandable-body p {
+      margin-top: 10px;
+      font-size: 0.94rem;
+      line-height: 1.5;
     }
 
     .industries-hero {

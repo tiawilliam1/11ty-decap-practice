@@ -8,69 +8,63 @@ home_theme: alt
 <section class="services-page">
   <div class="services-hero">
     <div class="services-hero-inner">
-      <h1 data-reveal="up">Deep-Tech Patent Services</h1>
+      <h1 data-reveal="up">Services</h1>
       <p class="services-short" data-reveal="up" style="--reveal-delay: 80ms;">
-        End-to-end patent and IP support for deep-tech teams, from early invention analysis through portfolio strategy.
+        Technical patent-information services tailored to deep-tech innovation and strategic IP decisions.
       </p>
     </div>
 
     <nav class="services-cta-strip" aria-label="Services quick links">
-      <a href="#service-offerings" data-reveal="up" style="--reveal-delay: 200ms;">What I Provide</a>
+      <a href="#service-offerings" data-reveal="up" style="--reveal-delay: 200ms;">All Services</a>
       <a href="/about/" data-reveal="up" style="--reveal-delay: 280ms;">About Meletis</a>
       <a href="/contact/" data-reveal="up" style="--reveal-delay: 360ms;">Book a Consultation</a>
     </nav>
   </div>
 
   <section class="services-section-page" id="service-offerings">
-    <div class="services-page-head" data-reveal="up">
-      <h2>What I Provide</h2>
-      <p>Three focused service tracks designed to support technical and strategic IP decisions.</p>
-    </div>
+    {% set service_items = [
+      {
+        "title": "Patentability Studies",
+        "description": "Prior art searches across global patent databases and scientific literature to assess the novelty and inventive step of your invention before filing. Clear technical reports highlighting the closest prior art and its relevance to your claims."
+      },
+      {
+        "title": "Freedom-to-Operate (FTO) Analysis",
+        "description": "In-depth technical searches to identify third-party patents potentially relevant to your product or process. Structured comparative analysis between your technology and identified claims giving you the technical foundation for informed IP decisions."
+      },
+      {
+        "title": "Invalidity & Prior Art Searches",
+        "description": "Advanced prior art searches - patents, scientific publications, technical documentation, product literature - to challenge the validity of a targeted patent. Supports defence against infringement allegations and strengthens your position in licence negotiations."
+      },
+      {
+        "title": "Patent Landscaping & Portfolio Mapping",
+        "description": "Quantitative and qualitative analysis of patent portfolios. Competitive mapping, identification of key players, white spaces, and technology trends. Visual outputs tailored to your strategic questions."
+      },
+      {
+        "title": "Competitive & Technology Watch",
+        "description": "Continuous monitoring of competitor filings, technology alerts, and periodic reports aligned with your strategic priorities. Stay ahead of the patent landscape in your technology domain."
+      },
+      {
+        "title": "Technical Consulting in Patent Information",
+        "description": "Search strategy design, technical due diligence, technical sourcing for M&A or licensing contexts. Tailored advisory on how to leverage patent information for business decisions."
+      },
+      {
+        "title": "Patent Search Training",
+        "description": "Tailored sessions on patent databases, search methodologies, and professional tools for R&D teams, engineers, and IP professionals. From beginner search techniques to advanced analytical methods."
+      }
+    ] %}
 
-    <div class="services-list-grid">
-      <article class="services-list-card services-feature-card">
-        <h3>Patent Research &amp; Analysis</h3>
-        <p class="services-card-lead">
-          Comprehensive technical and legal analysis to assess novelty, patentability, and strategic risks across complex innovation spaces.
-        </p>
-        <div class="services-subgrid">
-          <a href="/contact/" class="services-subitem">Patentability Searches</a>
-          <a href="/contact/" class="services-subitem">Freedom-to-Operate (FTO)</a>
-          <a href="/contact/" class="services-subitem">State-of-the-Art / Prior Art</a>
-          <a href="/contact/" class="services-subitem">Validity / Invalidity</a>
-          <a href="/contact/" class="services-subitem">Patent Landscapes</a>
-          <a href="/contact/" class="services-subitem">Competitor IP Strategy Analysis</a>
-        </div>
-        <a class="services-learn-more" href="/contact/">Learn More</a>
-      </article>
-
-      <article class="services-list-card services-feature-card">
-        <h3>Deep-Tech Expertise</h3>
-        <p class="services-card-lead">
-          Domain-specific insight grounded in advanced semiconductor, optical, and photonic technologies for high-stakes engineering decisions.
-        </p>
-        <div class="services-subgrid">
-          <a href="/contact/" class="services-subitem">Semiconductor Physics</a>
-          <a href="/contact/" class="services-subitem">Optoelectronics &amp; Photonics</a>
-          <a href="/contact/" class="services-subitem">Laser &amp; LED Technologies</a>
-          <a href="/contact/" class="services-subitem">Nano-Photonics</a>
-        </div>
-        <a class="services-learn-more" href="/contact/">Learn More</a>
-      </article>
-
-      <article class="services-list-card services-feature-card">
-        <h3>IP Strategy Support</h3>
-        <p class="services-card-lead">
-          Practical support to align R&amp;D output, filing priorities, and portfolio decisions with long-term business and litigation strategy.
-        </p>
-        <div class="services-subgrid">
-          <a href="/contact/" class="services-subitem">R&amp;D Patent Training</a>
-          <a href="/contact/" class="services-subitem">Patent Monitoring &amp; Alerts</a>
-          <a href="/contact/" class="services-subitem">AI-Assisted Search Evaluation</a>
-          <a href="/contact/" class="services-subitem">Drafting &amp; Office Actions</a>
-        </div>
-        <a class="services-learn-more" href="/contact/">Learn More</a>
-      </article>
+    <div class="services-list-grid services-expandable-list">
+      {% for item in service_items %}
+        <details class="services-feature-card service-expandable" open>
+          <summary>
+            <span class="service-expandable-title">{{ item.title }}</span>
+            <span class="service-expandable-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="service-expandable-body">
+            <p>{{ item.description }}</p>
+          </div>
+        </details>
+      {% endfor %}
     </div>
   </section>
 </section>
