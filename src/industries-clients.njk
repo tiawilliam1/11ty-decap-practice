@@ -2,22 +2,155 @@
 layout: base.njk
 title: Industries & Clients
 permalink: /industries-clients/
+home_theme: alt
 ---
 
-<section class="page-intro">
-  <h1>Industries &amp; Clients</h1>
-  <p>
-    Support tailored to the technical and legal realities of high-complexity
-    sectors and the teams building in them.
-  </p>
-</section>
+<section class="industries-page">
+  <div class="industries-hero">
+    <div class="industries-hero-inner">
+      <h1 data-reveal="up">Industries &amp; Use Cases</h1>
+      <p class="industries-short" data-reveal="up" style="--reveal-delay: 80ms;">
+        Physicist-level patent search and analysis for high-complexity technology sectors and the teams building in them.
+      </p>
+    </div>
 
-<section class="page-content">
-  <h2>Industries</h2>
-  <ul>
-    <li>Semiconductors and microelectronics</li>
-    <li>Photonics and optical systems</li>
-    <li>AI-enabled hardware and sensing</li>
-    <li>Advanced manufacturing technologies</li>
-  </ul>
+    <nav class="industries-cta-strip" aria-label="Industries and clients quick links">
+      <a href="#technology-domains" data-reveal="up" style="--reveal-delay: 200ms;">Technology Domains</a>
+      <a href="#who-we-support" data-reveal="up" style="--reveal-delay: 280ms;">Who We Support</a>
+      <a href="#how-we-partner" data-reveal="up" style="--reveal-delay: 360ms;">How We Partner</a>
+    </nav>
+  </div>
+
+  <section class="industries-section industries-section--domains" id="technology-domains">
+    <div class="industries-section-inner">
+      <div class="industries-head" data-reveal="up">
+        <h2>Technology Domains</h2>
+        <p>Specialist support for engineering-heavy sectors where device-level understanding improves patent decisions.</p>
+      </div>
+
+      <div class="industries-grid industries-grid--domains">
+        <article class="industries-card industries-domain-card industries-domain-card--photonics" data-reveal="up" style="--reveal-delay: 80ms;">
+          <div class="industries-domain-head">
+            <span class="industries-domain-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <circle cx="12" cy="12" r="3.2" />
+                <path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5 5l2.2 2.2M16.8 16.8 19 19M19 5l-2.2 2.2M7.2 16.8 5 19" />
+              </svg>
+            </span>
+            <h3>Photonics &amp; Optoelectronics</h3>
+          </div>
+          <p class="industries-domain-teaser">LED, laser, sensing, and imaging platforms.</p>
+          <details class="industries-domain-details">
+            <summary>Expand detail</summary>
+            <p>LEDs, lasers, optical sensors, fibre optics, imaging systems, and lidar technologies.</p>
+          </details>
+        </article>
+
+        <article class="industries-card industries-domain-card industries-domain-card--semiconductors" data-reveal="up" style="--reveal-delay: 170ms;">
+          <div class="industries-domain-head">
+            <span class="industries-domain-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <rect x="7" y="7" width="10" height="10" rx="2" />
+                <path d="M9 1.5v3M15 1.5v3M9 19.5v3M15 19.5v3M1.5 9h3M1.5 15h3M19.5 9h3M19.5 15h3" />
+              </svg>
+            </span>
+            <h3>Semiconductors &amp; Compound Semiconductors</h3>
+          </div>
+          <p class="industries-domain-teaser">Device physics and fabrication across advanced materials.</p>
+          <details class="industries-domain-details">
+            <summary>Expand detail</summary>
+            <p>GaN, ZnO, III-V materials, device physics, and fabrication processes.</p>
+          </details>
+        </article>
+
+        <article class="industries-card industries-domain-card industries-domain-card--quantum" data-reveal="up" style="--reveal-delay: 260ms;">
+          <div class="industries-domain-head">
+            <span class="industries-domain-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <circle cx="12" cy="12" r="1.8" />
+                <ellipse cx="12" cy="12" rx="8" ry="3.5" />
+                <ellipse cx="12" cy="12" rx="8" ry="3.5" transform="rotate(60 12 12)" />
+                <ellipse cx="12" cy="12" rx="8" ry="3.5" transform="rotate(-60 12 12)" />
+              </svg>
+            </span>
+            <h3>Quantum Technologies</h3>
+          </div>
+          <p class="industries-domain-teaser">Optics, sensing, and hardware-intensive quantum systems.</p>
+          <details class="industries-domain-details">
+            <summary>Expand detail</summary>
+            <p>Quantum optics, quantum sensing, quantum computing hardware, and single-photon sources.</p>
+          </details>
+        </article>
+
+        <article class="industries-card industries-domain-card industries-domain-card--displays" data-reveal="up" style="--reveal-delay: 350ms;">
+          <div class="industries-domain-head">
+            <span class="industries-domain-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <rect x="3.5" y="5" width="17" height="11" rx="2" />
+                <path d="M9 19h6M12 16v3" />
+              </svg>
+            </span>
+            <h3>Advanced Display Systems</h3>
+          </div>
+          <p class="industries-domain-teaser">Display stacks, interfaces, and integration layers.</p>
+          <details class="industries-domain-details">
+            <summary>Expand detail</summary>
+            <p>LCD, OLED, micro-LED, head-up displays, immersive interfaces, and plastronics.</p>
+          </details>
+        </article>
+
+        <article class="industries-card industries-domain-card industries-domain-card--manufacturing" data-reveal="up" style="--reveal-delay: 440ms;">
+          <div class="industries-domain-head">
+            <span class="industries-domain-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <circle cx="12" cy="12" r="3" />
+                <path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6" />
+              </svg>
+            </span>
+            <h3>Advanced Manufacturing &amp; Automotive Innovation</h3>
+          </div>
+          <p class="industries-domain-teaser">Cockpit systems and mechanical innovation programs.</p>
+          <details class="industries-domain-details">
+            <summary>Expand detail</summary>
+            <p>Vehicle cockpit systems, instrument panels, and related mechanical innovation.</p>
+          </details>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="industries-section industries-section--clients" id="who-we-support">
+    <div class="industries-section-inner">
+      <div class="industries-head" data-reveal="up">
+        <h2>Who Works with TechnoGenesis</h2>
+        <p>Engagement models for teams that need deep-tech patentability, FTO, and prior-art capability.</p>
+      </div>
+
+      <div class="industries-grid industries-grid--clients">
+        <article class="industries-card" data-reveal="up" style="--reveal-delay: 80ms;">
+          <h3>Patent Firms &amp; IP Practices</h3>
+          <p>Deep-tech technical support for searches in photonics, semiconductors, and quantum domains. A technical extension when the physics goes beyond generalist capability.</p>
+        </article>
+
+        <article class="industries-card" data-reveal="up" style="--reveal-delay: 170ms;">
+          <h3>R&amp;D-Driven SMEs &amp; Deep-Tech Startups</h3>
+          <p>Rigorous patentability and FTO support in photonics, quantum, and semiconductor sectors, at a scale that fits practical budgets.</p>
+        </article>
+
+        <article class="industries-card" data-reveal="up" style="--reveal-delay: 260ms;">
+          <h3>Research Institutes &amp; Universities</h3>
+          <p>Patentability assessment of research output, with scientific collaboration and co-publication awareness where relevant.</p>
+        </article>
+
+        <article class="industries-card" data-reveal="up" style="--reveal-delay: 350ms;">
+          <h3>Corporate IP Departments</h3>
+          <p>Specialised overflow capacity and niche technical expertise for photonics and quantum patent search workstreams.</p>
+        </article>
+      </div>
+
+      <p class="industries-partner-note" id="how-we-partner" data-reveal="soft" style="--reveal-delay: 90ms;">
+        <span class="industries-brand">TechnoGenesis</span> is the deep-tech partner for organisations that need physicist-level technical expertise in patent search and analysis, without the cost and lead time of a full consulting firm.
+      </p>
+    </div>
+  </section>
 </section>

@@ -81,11 +81,11 @@ home_theme: alt
       <p>{{ about.credentials_subline }}</p>
     </div>
     <div class="about-credentials-panel" data-reveal="soft" style="--reveal-delay: 80ms;">
-      <ul class="about-credentials-list">
+      <ol class="about-credentials-list">
         {% for item in about.credentials %}
           <li data-reveal="soft" style="--reveal-delay: {{ loop.index0 * 60 }}ms;">{{ item }}</li>
         {% endfor %}
-      </ul>
+      </ol>
     </div>
   </section>
 </section>

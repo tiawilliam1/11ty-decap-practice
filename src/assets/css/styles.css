@@ -2742,6 +2742,374 @@ margin-bottom: -7%;
     background: #173f71;
   }
 
+  .industries-page {
+    padding: 0;
+    background: #ffffff;
+  }
+
+  .industries-hero {
+    position: relative;
+    overflow: hidden;
+    min-height: clamp(440px, 62vh, 580px);
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    margin-bottom: 0;
+    padding: clamp(52px, 7.3vw, 88px) clamp(22px, 6vw, 72px) clamp(110px, 10.8vw, 144px);
+    background:
+      radial-gradient(circle at 84% 20%, rgba(112, 172, 255, 0.24), transparent 42%),
+      radial-gradient(circle at 10% 86%, rgba(108, 158, 235, 0.17), transparent 46%),
+      linear-gradient(132deg, #0a1f42 0%, #133563 48%, #1f4f8b 100%);
+    border: 1px solid #163d6d;
+    box-shadow: 0 18px 40px rgba(8, 22, 48, 0.38);
+  }
+
+  .industries-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(8, 25, 54, 0.9) 0%,
+        rgba(8, 25, 54, 0.68) 30%,
+        rgba(8, 25, 54, 0.28) 56%,
+        rgba(8, 25, 54, 0.05) 74%,
+        rgba(8, 25, 54, 0) 86%
+      ),
+      url("/assets/img/design option.png");
+    background-size: 100% 100%, cover;
+    background-position: left top, right center;
+    background-repeat: no-repeat;
+    opacity: 0.33;
+    filter: saturate(0.96) contrast(1.02);
+    pointer-events: none;
+  }
+
+  .industries-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(96deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 44%, transparent 100%);
+    pointer-events: none;
+  }
+
+  .industries-hero-inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto 96px;
+  }
+
+  .industries-hero h1 {
+    margin: 0;
+    max-width: 11ch;
+    color: #f6f9ff;
+    font-size: clamp(40px, 5.2vw, 72px);
+    font-weight: 700;
+    line-height: 1.06;
+    letter-spacing: -0.032em;
+    text-shadow: 0 12px 28px rgba(6, 18, 44, 0.3);
+  }
+
+  .industries-short {
+    margin: 18px 0 0;
+    max-width: 48ch;
+    color: rgba(229, 238, 255, 0.9);
+    font-size: clamp(1.02rem, 1.45vw, 1.2rem);
+    line-height: 1.58;
+    font-weight: 500;
+    letter-spacing: 0.002em;
+    text-shadow: 0 6px 18px rgba(6, 18, 44, 0.2);
+  }
+
+  .industries-cta-strip {
+    position: absolute;
+    left: 50%;
+    bottom: 44px;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+    width: min(980px, calc(100% - 56px));
+  }
+
+  .industries-cta-strip a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 18px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #e7eeff;
+    font-size: clamp(0.86rem, 1.05vw, 1.02rem);
+    font-weight: 600;
+    line-height: 1.2;
+    min-height: 22px;
+    text-align: center;
+    white-space: nowrap;
+    transition: color 120ms ease;
+  }
+
+  .industries-cta-strip a + a {
+    border-left: 2px solid rgba(231, 238, 255, 0.42);
+  }
+
+  .industries-cta-strip a:hover,
+  .industries-cta-strip a:focus-visible {
+    color: #ffffff;
+  }
+
+  .industries-section {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    min-height: 100svh;
+    display: grid;
+    align-items: center;
+    padding: clamp(48px, 7.2vw, 88px) 0;
+  }
+
+  .industries-section-inner {
+    width: min(1200px, calc(100% - 32px));
+    margin: 0 auto;
+  }
+
+  .industries-section--domains {
+    background:
+      radial-gradient(circle at 88% 16%, rgba(161, 203, 252, 0.28), transparent 42%),
+      radial-gradient(circle at 14% 84%, rgba(198, 223, 252, 0.34), transparent 44%),
+      linear-gradient(156deg, #f7fbff 0%, #edf5ff 52%, #f8fbff 100%);
+    border-top: 1px solid #d5e4f7;
+    border-bottom: 1px solid #d5e4f7;
+  }
+
+  .industries-section--clients {
+    min-height: auto;
+    padding: clamp(34px, 4.8vw, 64px) 0;
+    background:
+      radial-gradient(circle at 82% 18%, rgba(122, 180, 255, 0.22), transparent 42%),
+      linear-gradient(132deg, #0a1f42 0%, #133563 48%, #1f4f8b 100%);
+    border-top: 1px solid #163d6d;
+    border-bottom: 1px solid #163d6d;
+  }
+
+  .industries-head {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto clamp(20px, 2.8vw, 34px);
+    padding: 0 12px;
+  }
+
+  .industries-head h2 {
+    margin: 0;
+    color: #1a3968;
+    font-size: clamp(24px, 3vw, 34px);
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+
+  .industries-head p {
+    margin: 10px auto 0;
+    color: #4a5f86;
+    font-size: clamp(1rem, 1.22vw, 1.1rem);
+    line-height: 1.55;
+    max-width: 60ch;
+  }
+
+  .industries-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(14px, 1.6vw, 20px);
+  }
+
+  .industries-card {
+    min-height: 100%;
+    border-radius: 16px;
+    border: 1px solid #d5e3f5;
+    background: linear-gradient(180deg, #ffffff 0%, #f3f8ff 100%);
+    box-shadow: 0 12px 28px rgba(8, 24, 52, 0.12);
+    padding: clamp(20px, 2vw, 26px);
+    transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
+  }
+
+  .industries-card:hover {
+    transform: translateY(-2px);
+    border-color: #c2d6f1;
+    box-shadow: 0 16px 30px rgba(8, 24, 52, 0.14);
+  }
+
+  .industries-card h3 {
+    margin: 0;
+    color: #1a3a67;
+    font-size: clamp(1.2rem, 1.5vw, 1.4rem);
+    letter-spacing: -0.01em;
+    line-height: 1.26;
+    max-width: none;
+  }
+
+  .industries-card p {
+    margin: 10px 0 0;
+    color: #445e89;
+    font-size: clamp(0.96rem, 1.06vw, 1.02rem);
+    line-height: 1.58;
+  }
+
+  .industries-grid--domains .industries-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .industries-domain-card {
+    display: grid;
+    align-content: start;
+    gap: 0;
+  }
+
+  .industries-domain-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .industries-domain-head h3 {
+    margin: 0;
+  }
+
+  .industries-domain-icon {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 11px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(146deg, #2f6fb2 0%, #1f4f8b 100%);
+    box-shadow: inset 0 1px 0 rgba(229, 239, 255, 0.24), 0 7px 14px rgba(15, 44, 86, 0.22);
+  }
+
+  .industries-domain-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: #f7fbff;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .industries-domain-card--photonics .industries-domain-icon {
+    background: linear-gradient(146deg, #3e7fd0 0%, #2a5ea6 100%);
+  }
+
+  .industries-domain-card--semiconductors .industries-domain-icon {
+    background: linear-gradient(146deg, #356db6 0%, #224f8f 100%);
+  }
+
+  .industries-domain-card--quantum .industries-domain-icon {
+    background: linear-gradient(146deg, #4b85cc 0%, #2d5ea0 100%);
+  }
+
+  .industries-domain-card--displays .industries-domain-icon {
+    background: linear-gradient(146deg, #467bc2 0%, #2c578f 100%);
+  }
+
+  .industries-domain-card--manufacturing .industries-domain-icon {
+    background: linear-gradient(146deg, #3a71b7 0%, #25518b 100%);
+  }
+
+  .industries-domain-teaser {
+    margin: 10px 0 0;
+    color: #3f5c86;
+    font-size: clamp(0.92rem, 0.98vw, 0.96rem);
+    line-height: 1.5;
+  }
+
+  .industries-domain-details {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #d8e5f7;
+  }
+
+  .industries-domain-details summary {
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+    color: #1f4f8b;
+    font-size: 0.86rem;
+    font-weight: 640;
+    letter-spacing: 0.01em;
+    user-select: none;
+  }
+
+  .industries-domain-details summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .industries-domain-details summary::before {
+    content: "+";
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    border: 1px solid rgba(86, 131, 186, 0.5);
+    background: #f5f9ff;
+    color: #2f6fb2;
+    font-size: 0.82rem;
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  .industries-domain-details[open] summary::before {
+    content: "-";
+  }
+
+  .industries-domain-details p {
+    margin: 10px 0 0;
+    color: #445e89;
+    font-size: clamp(0.95rem, 1vw, 0.99rem);
+    line-height: 1.56;
+  }
+
+  .industries-section--clients .industries-head h2,
+  .industries-section--clients .industries-head p {
+    color: #eaf2ff;
+  }
+
+  .industries-section--clients .industries-card {
+    border-color: rgba(233, 242, 255, 0.74);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(238, 246, 255, 0.96) 100%);
+    box-shadow: 0 14px 30px rgba(8, 22, 48, 0.24);
+  }
+
+  .industries-partner-note {
+    margin: clamp(18px, 2.6vw, 30px) auto 0;
+    padding-top: clamp(14px, 2vw, 18px);
+    border-top: 1px solid rgba(231, 241, 255, 0.34);
+    max-width: 980px;
+    color: rgba(231, 241, 255, 0.94);
+    font-size: clamp(1rem, 1.16vw, 1.08rem);
+    line-height: 1.62;
+    font-style: italic;
+    text-align: center;
+  }
+
+  .industries-partner-note .industries-brand {
+    color: #ffffff;
+    font-weight: 650;
+  }
+
   .contact-page {
     position: relative;
     width: 100vw;
@@ -3123,6 +3491,137 @@ margin-bottom: -7%;
       min-height: 40px;
       padding: 0 18px;
       font-size: 0.86rem;
+    }
+
+    .industries-hero {
+      min-height: clamp(430px, 68svh, 560px);
+      padding: clamp(40px, 8vw, 58px) 16px clamp(98px, 18vw, 124px);
+      margin-bottom: 0;
+    }
+
+    .industries-hero-inner {
+      margin-bottom: 86px;
+    }
+
+    .industries-hero h1 {
+      max-width: none;
+      font-size: clamp(2.1rem, 9vw, 3rem);
+      line-height: 1.06;
+    }
+
+    .industries-short {
+      margin-top: 14px;
+      max-width: none;
+      font-size: clamp(0.98rem, 4.2vw, 1.1rem);
+      line-height: 1.52;
+    }
+
+    .industries-cta-strip {
+      bottom: 30px;
+      width: calc(100% - 24px);
+      gap: 8px 0;
+    }
+
+    .industries-cta-strip a {
+      font-size: 0.86rem;
+      padding: 0 12px;
+      min-height: 20px;
+    }
+
+    .industries-section {
+      min-height: 100svh;
+      padding: 34px 0;
+    }
+
+    .industries-section--clients {
+      min-height: auto;
+      padding: 26px 0;
+    }
+
+    .industries-section-inner {
+      width: calc(100% - 24px);
+    }
+
+    .industries-head {
+      margin-bottom: 18px;
+    }
+
+    .industries-head p {
+      font-size: 0.98rem;
+      line-height: 1.5;
+    }
+
+    .industries-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .industries-grid--domains .industries-card:last-child {
+      grid-column: auto;
+    }
+
+    .industries-card {
+      min-height: auto;
+      padding: 18px 16px;
+    }
+
+    .industries-card h3 {
+      max-width: none;
+      font-size: clamp(1.25rem, 6vw, 1.72rem);
+    }
+
+    .industries-card p {
+      font-size: 0.97rem;
+      line-height: 1.54;
+    }
+
+    .industries-domain-head {
+      gap: 10px;
+    }
+
+    .industries-domain-icon {
+      flex-basis: 34px;
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+    }
+
+    .industries-domain-icon svg {
+      width: 19px;
+      height: 19px;
+    }
+
+    .industries-domain-teaser {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      line-height: 1.48;
+    }
+
+    .industries-domain-details {
+      margin-top: 9px;
+      padding-top: 9px;
+    }
+
+    .industries-domain-details summary {
+      font-size: 0.82rem;
+    }
+
+    .industries-domain-details summary::before {
+      width: 15px;
+      height: 15px;
+      font-size: 0.78rem;
+    }
+
+    .industries-domain-details p {
+      font-size: 0.95rem;
+      line-height: 1.52;
+    }
+
+    .industries-partner-note {
+      margin-top: 14px;
+      padding-top: 12px;
+      font-size: 0.98rem;
+      line-height: 1.56;
     }
   }
 
@@ -4526,55 +5025,118 @@ font-weight: 500;
   }
 
   body.home-theme-alt .about-credentials-section {
+    position: relative;
     border-radius: 0;
     border: 0;
-    border-top: 1px solid #d2dff4;
-    border-bottom: 1px solid #d2dff4;
-    background: linear-gradient(165deg, #ffffff 0%, #f4f8ff 100%);
+    border-top: 1px solid #c4d9f1;
+    border-bottom: 1px solid #c4d9f1;
+    background:
+      radial-gradient(circle at 86% 14%, rgba(114, 170, 238, 0.24), transparent 40%),
+      radial-gradient(circle at 10% 88%, rgba(180, 214, 252, 0.24), transparent 45%),
+      linear-gradient(154deg, #f2f7ff 0%, #e7f1ff 52%, #f4f8ff 100%);
     box-shadow: none;
-    padding: clamp(30px, 4.4vw, 56px) clamp(18px, 4vw, 46px);
-    margin-bottom: -6%;
+    padding: clamp(32px, 4.4vw, 58px) clamp(18px, 4vw, 46px);
+    margin-bottom: -3%;
+    overflow: hidden;
+    margin-bottom: -5%;
+  }
+
+  body.home-theme-alt .about-credentials-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(114deg, rgba(255, 255, 255, 0.46) 0%, rgba(255, 255, 255, 0) 44%);
+    pointer-events: none;
+  }
+
+  body.home-theme-alt .about-credentials-section .about-section-head {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 20px;
+    max-width: 980px;
+  }
+
+  body.home-theme-alt .about-credentials-section .about-section-head h2 {
+    margin-top: 5%;
+    margin-bottom: 10px;
+    color: #1d4b86;
+    letter-spacing: -0.024em;
+  }
+
+  body.home-theme-alt .about-credentials-section .about-section-head p {
+    color: #1d4b86;
+    line-height: 1.56;
   }
 
   body.home-theme-alt .about-credentials-panel {
-    margin: 10px auto 0;
+    position: relative;
+    z-index: 1;
+    margin: 12px auto 0;
     max-width: 1180px;
-    margin-bottom: 4%;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    margin-bottom: 3.5%;
   }
 
   body.home-theme-alt .about-credentials-list {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px 16px;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 980px;
   }
 
   body.home-theme-alt .about-credentials-list li {
     position: relative;
     margin: 0;
-    padding: 10px 12px 10px 36px;
-    border-radius: 12px;
-    border: 1px solid #d2dff4;
-    background: #ffffff;
-    color: #203867;
-    font-size: clamp(0.94rem, 1.1vw, 1rem);
-    line-height: 1.5;
-    font-weight: 500;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+    min-height: 0;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(151, 183, 221, 0.84);
+    background: linear-gradient(180deg, #ffffff 0%, #f5f9ff 100%);
+    color: #203b67;
+    font-size: clamp(0.98rem, 1.07vw, 1.05rem);
+    line-height: 1.42;
+    font-weight: 570;
+    letter-spacing: -0.006em;
+    box-shadow:
+      0 10px 22px rgba(18, 42, 80, 0.09),
+      inset 0 1px 0 rgba(255, 255, 255, 0.86);
+    transition: transform 170ms ease, border-color 170ms ease, box-shadow 170ms ease;
+  }
+
+  body.home-theme-alt .about-credentials-list li:hover,
+  body.home-theme-alt .about-credentials-list li:focus-within {
+    transform: translateY(-1px);
+    border-color: #8cb2dc;
+    box-shadow:
+      0 14px 26px rgba(18, 42, 80, 0.11),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
   }
 
   body.home-theme-alt .about-credentials-list li::before {
     content: "";
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 14px;
-    height: 14px;
+    width: 13px;
+    height: 13px;
     border-radius: 50%;
-    background: radial-gradient(circle at 35% 35%, #6fb2ff 0%, #2b67ad 72%);
-    box-shadow: 0 0 0 3px rgba(43, 103, 173, 0.16);
+    border: 1px solid rgba(67, 114, 173, 0.58);
+    background:
+      radial-gradient(circle at 34% 32%, #d6ebff 0%, #6ea2d8 68%, #3e73b1 100%);
+    box-shadow: 0 0 0 3px rgba(96, 150, 213, 0.15);
+  }
+
+  body.home-theme-alt .about-credentials-list li:last-child {
+    margin-bottom: -33px;
   }
 
   @media (max-width: 980px) {
@@ -4626,6 +5188,25 @@ font-weight: 500;
 
     body.home-theme-alt .about-credentials-list {
       grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    body.home-theme-alt .about-credentials-panel {
+      margin-bottom: 4%;
+    }
+
+    body.home-theme-alt .about-credentials-list li {
+      min-height: auto;
+      padding: 12px 13px;
+      gap: 10px;
+      font-size: clamp(0.94rem, 3.8vw, 1rem);
+      line-height: 1.42;
+      box-shadow: 0 8px 16px rgba(18, 42, 80, 0.1);
+    }
+
+    body.home-theme-alt .about-credentials-list li::before {
+      width: 11px;
+      height: 11px;
     }
   }
 
