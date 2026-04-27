@@ -3165,8 +3165,9 @@ margin-bottom: -7%;
     margin: 14px auto 0;
     max-width: 62ch;
     color: #4a5f86;
-    font-size: clamp(1rem, 1.08vw, 1.04rem);
-    line-height: 1.64;
+   font-size: clamp(1.4rem, 1.08vw, 1.04rem);
+line-height: 1.64;
+font-weight: 500;
   }
 
   .contact-shell {
