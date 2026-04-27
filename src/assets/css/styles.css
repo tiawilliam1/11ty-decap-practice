@@ -1448,6 +1448,10 @@ max-width: 221px;
   .footer-contact {
     justify-self: end;
     text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
   }
 
   .footer-contact-label {
@@ -1460,12 +1464,24 @@ max-width: 221px;
   }
 
   .footer-contact a {
+    display: inline-block;
     color: #223a78;
     font-size: 0.9rem;
     font-weight: 600;
     text-decoration: underline;
     text-decoration-color: rgba(34, 58, 120, 0.34);
     text-underline-offset: 3px;
+  }
+
+  .footer-contact-phone {
+    margin-top: 0;
+  }
+
+  .footer-contact-location {
+    margin: 0 0 2px;
+    color: #5d698c;
+    font-size: 0.84rem;
+    line-height: 1.4;
   }
 
   .footer-bottom {
@@ -1491,6 +1507,7 @@ max-width: 221px;
     .footer-contact {
       justify-self: center;
       text-align: center;
+      align-items: center;
     }
 
     .footer-bottom {
