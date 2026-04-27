@@ -2,46 +2,54 @@
 layout: base.njk
 title: Contact
 permalink: /contact/
+home_theme: alt
 ---
 
 <section class="contact-page">
-  <div class="contact-shell">
-    <div class="contact-main">
-      <p class="contact-kicker">Contact Form</p>
-      <h1>Let us discuss your IP and deep-tech goals.</h1>
-      <p class="contact-lead">
-        Share a few details and I will respond with the best next step for your case.
+  <section class="contact-section" id="contact-form">
+    <header class="contact-head">
+      <h1>Contact</h1>
+      <p>
+        Share your project context, technology focus, and IP questions. You will receive a clear next-step recommendation.
       </p>
+    </header>
 
-      <form class="contact-form" name="contact" method="post" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="contact" />
-        <p class="hidden-field">
-          <label>Do not fill this out if you are human: <input name="bot-field" /></label>
+    <div class="contact-shell">
+      <div class="contact-main">
+        <h2>Send a Message</h2>
+        <p class="contact-lead">
+          Include your technical domain, stage (R&amp;D, filing, or litigation), and what decision you need support on.
         </p>
 
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" required />
+        <form class="contact-form" name="contact" method="post" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact" />
+          <p class="hidden-field">
+            <label>Do not fill this out if you are human: <input name="bot-field" /></label>
+          </p>
 
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" required />
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required />
 
-        <label for="company">Company</label>
-        <input id="company" name="company" type="text" />
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="6" required></textarea>
+          <label for="company">Company</label>
+          <input id="company" name="company" type="text" />
 
-        <button type="submit" class="contact-submit">Send Message</button>
-      </form>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button type="submit" class="contact-submit">Send Message</button>
+        </form>
+      </div>
+
+      <aside class="contact-side" netlify>
+        <h3>Direct Contact</h3>
+        <p><strong>Email:</strong> <a href="mailto:contact@technogenesis.fr">contact@technogenesis.fr</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+300000000000">+30 000 000 0000</a></p>
+        <p><strong>LinkedIn:</strong> <a href="#" rel="noopener noreferrer">Optional</a></p>
+
+      </aside>
     </div>
-
-    <aside class="contact-side" netlify>
-      <h2>Direct Contact</h2>
-      <p><strong>Email:</strong> <a href="mailto:tiayw10@gmail.com">tiayw10@gmail.com</a></p>
-      <p><strong>Phone:</strong> <a href="tel:+300000000000">+30 000 000 0000</a></p>
-      <p><strong>LinkedIn:</strong> <a href="#" rel="noopener noreferrer">Optional</a></p>
-
-      <a class="consultation-btn" href="/contact/">Book a 30-minute consultation</a>
-    </aside>
-  </div>
+  </section>
 </section>

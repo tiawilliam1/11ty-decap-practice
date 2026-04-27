@@ -40,16 +40,19 @@ home_theme: alt
       </div>
 
       <aside class="about-opening-aside" data-reveal="right" style="--reveal-delay: 120ms;">
-        <figure class="about-opening-avatar">
-          <img
-            src="{{ about.profile_image or '/assets/img/Profilepicfiller.png' }}"
-            alt="{{ about.profile_image_alt or 'Profile picture placeholder' }}"
-            loading="lazy"
-            decoding="async"
-          />
-        </figure>
-        <p class="about-opening-keyline">{{ about.opening_keyline }}</p>
-        <a class="about-opening-consult" href="/contact/">Book a Consultation</a>
+        <article class="about-opening-hero-card">
+          <figure class="about-opening-avatar">
+            <img
+              src="{{ about.profile_image or '/assets/img/Profilepicfiller.png' }}"
+              alt="{{ about.profile_image_alt or 'Profile picture placeholder' }}"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+          <p class="about-opening-hero-tag">Deep-Tech IP Partner</p>
+          <p class="about-opening-keyline">{{ about.opening_keyline }}</p>
+          <a class="about-opening-consult" href="/contact/">Book a Consultation</a>
+        </article>
       </aside>
     </div>
   </section>

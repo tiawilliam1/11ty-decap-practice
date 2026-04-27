@@ -2,26 +2,29 @@
 layout: base.njk
 title: Publications & Projects
 permalink: /publications-projects/
+home_theme: alt
 ---
 
 <section class="publications-page">
-  <div class="about-hero about-hero--cover publications-hero">
-    <div class="about-hero-inner publications-hero-inner">
-      <h1>Publications &amp; Projects</h1>
-      <p class="about-short">
+  <div class="publications-hero">
+    <div class="publications-hero-inner">
+      <h1 data-reveal="up">Research and Publications</h1>
+      <p class="publications-short" data-reveal="up" style="--reveal-delay: 80ms;">
         Research, analysis, and technical insight for deep-tech IP strategy.
       </p>
     </div>
 
-    <nav class="about-cta-strip" aria-label="Publications quick links">
-      <a href="#all-publications">All Publications</a>
-      <a href="/contact/">Book a Consultation</a>
+    <nav class="publications-cta-strip" aria-label="Publications quick links">
+      <a href="#all-publications" data-reveal="up" style="--reveal-delay: 200ms;">All Publications</a>
+      <a href="/services/" data-reveal="up" style="--reveal-delay: 280ms;">Services</a>
+      <a href="/contact/" data-reveal="up" style="--reveal-delay: 360ms;">Book a Consultation</a>
     </nav>
   </div>
 
   <section class="publications-section" id="all-publications">
-    <div class="publications-head">
+    <div class="publications-head" data-reveal="up">
       <h2>All Publications</h2>
+      <p>Selected outputs spanning patent intelligence, deep-tech analysis, and strategic interpretation.</p>
     </div>
 
     {% if collections.posts and collections.posts.length %}
@@ -54,11 +57,11 @@ permalink: /publications-projects/
                 </a>
               </p>
             </div>
-            <div class="publication-media">
-              {% if post.data.image or post.data.featured_image %}
+            {% if post.data.image or post.data.featured_image %}
+              <div class="publication-media">
                 <img src="{{ post.data.image or post.data.featured_image }}" alt="" />
-              {% endif %}
-            </div>
+              </div>
+            {% endif %}
           </article>
         {% endfor %}
       </div>

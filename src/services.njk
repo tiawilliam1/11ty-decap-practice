@@ -2,26 +2,29 @@
 layout: base.njk
 title: Services
 permalink: /services/
+home_theme: alt
 ---
 
 <section class="services-page">
-  <div class="about-hero about-hero--cover services-hero">
-    <div class="about-hero-inner services-hero-inner">
-      <h1>Services</h1>
-      <p class="about-short">
+  <div class="services-hero">
+    <div class="services-hero-inner">
+      <h1 data-reveal="up">Deep-Tech Patent Services</h1>
+      <p class="services-short" data-reveal="up" style="--reveal-delay: 80ms;">
         End-to-end patent and IP support for deep-tech teams, from early invention analysis through portfolio strategy.
       </p>
     </div>
 
-    <nav class="about-cta-strip" aria-label="Services quick links">
-      <a href="#service-offerings">What I Provide</a>
-      <a href="/contact/">Book a Consultation</a>
+    <nav class="services-cta-strip" aria-label="Services quick links">
+      <a href="#service-offerings" data-reveal="up" style="--reveal-delay: 200ms;">What I Provide</a>
+      <a href="/about/" data-reveal="up" style="--reveal-delay: 280ms;">About Meletis</a>
+      <a href="/contact/" data-reveal="up" style="--reveal-delay: 360ms;">Book a Consultation</a>
     </nav>
   </div>
 
   <section class="services-section-page" id="service-offerings">
-    <div class="services-page-head">
+    <div class="services-page-head" data-reveal="up">
       <h2>What I Provide</h2>
+      <p>Three focused service tracks designed to support technical and strategic IP decisions.</p>
     </div>
 
     <div class="services-list-grid">
@@ -35,6 +38,8 @@ permalink: /services/
           <a href="/contact/" class="services-subitem">Freedom-to-Operate (FTO)</a>
           <a href="/contact/" class="services-subitem">State-of-the-Art / Prior Art</a>
           <a href="/contact/" class="services-subitem">Validity / Invalidity</a>
+          <a href="/contact/" class="services-subitem">Patent Landscapes</a>
+          <a href="/contact/" class="services-subitem">Competitor IP Strategy Analysis</a>
         </div>
         <a class="services-learn-more" href="/contact/">Learn More</a>
       </article>
