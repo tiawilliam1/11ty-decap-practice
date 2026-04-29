@@ -377,19 +377,70 @@
     margin: 0px auto 7%;
   }
 
-  .hero-mark {
+  .hero-mark,
+  .hero-mark-light {
     position: absolute;
     left: 50%;
     bottom: 120px;
     transform: translateX(-50%);
     width: clamp(340px, 44vw, 620px);
     max-width: 82vw;
-    height: auto;
-    opacity: 0.44;
     pointer-events: none;
     z-index: 1;
+  }
+
+  .hero-mark {
+    height: auto;
+    opacity: 0.44;
     filter: drop-shadow(0 22px 42px rgba(25, 53, 92, 0.28));
     transition: opacity 420ms ease, filter 420ms ease;
+  }
+
+  .hero-mark-light {
+    aspect-ratio: 3 / 2;
+    opacity: 0.74;
+    mix-blend-mode: screen;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(233, 246, 255, 0.08) 28%,
+      rgba(255, 255, 255, 0.62) 50%,
+      rgba(255, 255, 255, 0.2) 60%,
+      rgba(255, 255, 255, 0) 78%
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 250%;
+    background-position: 50% -180%;
+    -webkit-mask-image: url("/assets/img/Symmetrical%20blue%20gradient%20logo%20design.png");
+    mask-image: url("/assets/img/Symmetrical%20blue%20gradient%20logo%20design.png");
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    animation: heroLogoLightDrop 5.2s ease-in-out infinite;
+  }
+
+  @keyframes heroLogoLightDrop {
+    0% {
+      background-position: 50% -185%;
+      opacity: 0;
+    }
+    16% {
+      opacity: 0.64;
+    }
+    48% {
+      background-position: 50% 58%;
+      opacity: 0.74;
+    }
+    74% {
+      opacity: 0.28;
+    }
+    100% {
+      background-position: 50% 180%;
+      opacity: 0;
+    }
   }
 
   .hero-grid {
@@ -699,10 +750,18 @@
       flex-wrap: wrap;
     }
 
-    .hero-mark {
+    .hero-mark,
+    .hero-mark-light {
       bottom: 96px;
       width: min(82vw, 420px);
+    }
+
+    .hero-mark {
       opacity: 0.24;
+    }
+
+    .hero-mark-light {
+      opacity: 0.52;
     }
 
     .hero-cta-strip a {
@@ -726,6 +785,12 @@
     .hero-motion::before,
     .hero-motion::after {
       animation: none;
+    }
+
+    .hero-mark-light {
+      animation: none;
+      opacity: 0.22;
+      background-position: 50% 28%;
     }
 
     .hero-word--genesis,
@@ -2436,7 +2501,7 @@ margin-top:4%;
     line-height: 1.12;
     letter-spacing: -0.02em;
     font-weight: 650;
-    margin-top: -3%;th
+    margin-top: -3%;
   }
 
   .publications-info-inner p {
@@ -4778,10 +4843,10 @@ font-weight: 500;
   }
 
   body.home-theme-alt .hero-card--cover {
-    background:
-      radial-gradient(circle at 82% 16%, rgba(112, 172, 255, 0.24), transparent 40%),
-      radial-gradient(circle at 14% 88%, rgba(108, 158, 235, 0.18), transparent 42%),
-      linear-gradient(132deg, #0a1f42 0%, #133563 48%, #1f4f8b 100%);
+    background-image: url("/assets/img/background%201.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     box-shadow: 0 18px 40px rgba(8, 22, 48, 0.38);
   }
 
@@ -4884,6 +4949,11 @@ font-weight: 500;
   body.home-theme-alt .hero-mark {
     opacity: 0.44;
     filter: drop-shadow(0 18px 34px rgba(9, 22, 52, 0.34));
+    margin-bottom: -8%;
+  }
+
+  body.home-theme-alt .hero-mark-light {
+    opacity: 0.68;
     margin-bottom: -8%;
   }
 
