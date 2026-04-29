@@ -53,9 +53,14 @@ home_theme: alt
       }
     ] %}
 
+    <div class="services-page-head" data-reveal="up">
+      <h2>Service Offerings</h2>
+      <p>Specialist support for engineering-heavy sectors where device-level understanding improves patent decisions.</p>
+    </div>
+
     <div class="services-list-grid services-expandable-list">
       {% for item in service_items %}
-        <details class="services-feature-card service-expandable" open>
+        <details class="services-feature-card service-expandable">
           <summary>
             <span class="service-expandable-title">{{ item.title }}</span>
             <span class="service-expandable-icon" aria-hidden="true"></span>
