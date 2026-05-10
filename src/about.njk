@@ -15,7 +15,6 @@ home_theme: alt
     <nav class="about-cta-strip" aria-label="About quick links">
       <a href="#opening" data-reveal="up" style="--reveal-delay: 200ms;">Meletis Mexis</a>
       <a href="#career-timeline" data-reveal="up" style="--reveal-delay: 280ms;">Career Timeline</a>
-      <a href="#credentials" data-reveal="up" style="--reveal-delay: 360ms;">Credentials</a>
     </nav>
   </div>
 
@@ -75,17 +74,4 @@ home_theme: alt
     </ol>
   </section>
 
-  <section class="about-section about-credentials-section" id="credentials">
-    <div class="about-section-head" data-reveal="up">
-      <h2>{{ about.credentials_title }}</h2>
-      <p>{{ about.credentials_subline }}</p>
-    </div>
-    <div class="about-credentials-panel" data-reveal="soft" style="--reveal-delay: 80ms;">
-      <ol class="about-credentials-list">
-        {% for item in about.credentials %}
-          <li data-reveal="soft" style="--reveal-delay: {{ loop.index0 * 60 }}ms;">{{ item }}</li>
-        {% endfor %}
-      </ol>
-    </div>
-  </section>
 </section>

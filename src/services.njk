@@ -23,37 +23,135 @@ home_theme: alt
     {% set service_items = [
       {
         "title": "Patentability Studies",
-        "description": "Prior art searches across global patent databases and scientific literature to assess the novelty and inventive step of your invention before filing. Clear technical reports highlighting the closest prior art and its relevance to your claims."
+        "subline": "Assess novelty and inventive step before filing",
+        "details": [
+          {
+            "label": "What we do",
+            "text": "Prior-art searches across global patent databases and scientific literature to assess novelty and inventive step before filing."
+          },
+          {
+            "label": "Deliverables",
+            "text": "Clear technical report summarising closest prior art, claim-by-claim relevance, risk level, and recommended claim language or filing strategy."
+          },
+          {
+            "label": "Outcome",
+            "text": "Faster, more defensible filings and fewer surprises during prosecution."
+          }
+        ]
       },
       {
         "title": "Freedom-to-Operate (FTO) Analysis",
-        "description": "In-depth technical searches to identify third-party patents potentially relevant to your product or process. Structured comparative analysis between your technology and identified claims giving you the technical foundation for informed IP decisions."
+        "subline": "Technical FTO research identifying third-party patents",
+        "details": [
+          {
+            "label": "What we do",
+            "text": "Technical searches to identify third-party patents relevant to your product or process and map your technical features to identified claims."
+          },
+          {
+            "label": "Deliverables",
+            "text": "Claim-to-product feature mapping; technical relevance scoring of identified patents; coverage of key jurisdictions and patent status; structured technical dossier ready for legal review."
+          },
+          {
+            "label": "Outcome",
+            "text": "A rigorous technical dossier ready for legal review, giving your IP team or external counsel everything they need for confident clearance decisions."
+          }
+        ]
       },
       {
         "title": "Invalidity & Prior Art Searches",
-        "description": "Advanced prior art searches - patents, scientific publications, technical documentation, product literature - to challenge the validity of a targeted patent. Supports defence against infringement allegations and strengthens your position in licence negotiations."
+        "subline": "Targeted prior-art searches to challenge a patent",
+        "details": [
+          {
+            "label": "What we do",
+            "text": "Advanced searches across patents, scientific publications, technical docs, and product literature to find art that can challenge a target patent."
+          },
+          {
+            "label": "Deliverables",
+            "text": "Prior-art dossiers, annotated claim charts, and evidence packages suitable for litigation, oppositions, or licensing negotiations."
+          },
+          {
+            "label": "Outcome",
+            "text": "Stronger defensive positions and improved leverage in disputes or negotiations."
+          }
+        ]
       },
       {
         "title": "Patent Landscaping & Portfolio Mapping",
-        "description": "Quantitative and qualitative analysis of patent portfolios. Competitive mapping, identification of key players, white spaces, and technology trends. Visual outputs tailored to your strategic questions."
+        "subline": "Competitive maps and white-space analysis",
+        "details": [
+          {
+            "label": "What we do",
+            "text": "Quantitative and qualitative analysis of patent portfolios and technology spaces."
+          },
+          {
+            "label": "Deliverables",
+            "text": "Competitive maps, white-space identification, trend analysis, and visual dashboards tailored to your strategic questions."
+          },
+          {
+            "label": "Outcome",
+            "text": "Clear prioritisation of filings, licensing targets, and R&D focus areas."
+          }
+        ]
       },
       {
         "title": "Competitive & Technology Watch",
-        "description": "Continuous monitoring of competitor filings, technology alerts, and periodic reports aligned with your strategic priorities. Stay ahead of the patent landscape in your technology domain."
+        "subline": "Ongoing alerts and periodic competitor briefings",
+        "details": [
+          {
+            "label": "What we do",
+            "text": "Continuous monitoring of competitor filings, new publications, and technology alerts aligned with your priorities."
+          },
+          {
+            "label": "Deliverables",
+            "text": "Periodic briefings, alert feeds, and executive summaries highlighting material changes and opportunities."
+          },
+          {
+            "label": "Outcome",
+            "text": "Early warning on competitor moves and timely inputs for product and IP strategy."
+          }
+        ]
       },
       {
         "title": "Technical Consulting in Patent Information",
-        "description": "Search strategy design, technical due diligence, technical sourcing for M&A or licensing contexts. Tailored advisory on how to leverage patent information for business decisions."
+        "subline": "Technical due diligence and search strategy for deals",
+        "details": [
+          {
+            "label": "What we do",
+            "text": "Search strategy design, technical due diligence, and technical sourcing for M&A or licensing."
+          },
+          {
+            "label": "Deliverables",
+            "text": "Technical memos, due diligence reports, and integration recommendations that link patent findings to business value."
+          },
+          {
+            "label": "Outcome",
+            "text": "Faster, evidence-based commercial decisions in transactions and licensing."
+          }
+        ]
       },
       {
         "title": "Patent Search Training",
-        "description": "Tailored sessions on patent databases, search methodologies, and professional tools for R&D teams, engineers, and IP professionals. From beginner search techniques to advanced analytical methods."
+        "subline": "Practical workshops on search methods and tools",
+        "details": [
+          {
+            "label": "What we do",
+            "text": "Tailored training for R&D teams, engineers, and IP professionals on databases, search methodologies, and analytical tools."
+          },
+          {
+            "label": "Deliverables",
+            "text": "Hands-on workshops, custom exercises using your tech, and take-away templates for repeatable searches."
+          },
+          {
+            "label": "Outcome",
+            "text": "Internal capability uplift and faster, higher-quality in-house prior-art work."
+          }
+        ]
       }
     ] %}
 
     <div class="services-page-head" data-reveal="up">
       <h2>Service Offerings</h2>
-      <p>Specialist support for engineering-heavy sectors where device-level understanding improves patent decisions.</p>
+      <p>We translate device level engineering and complex physics know how into clearer, more actionable IP strategy.</p>
     </div>
 
     <div class="services-list-grid services-expandable-list">
@@ -61,10 +159,20 @@ home_theme: alt
         <details class="services-feature-card service-expandable">
           <summary>
             <span class="service-expandable-title">{{ item.title }}</span>
-            <span class="service-expandable-icon" aria-hidden="true"></span>
+            <span class="service-expandable-subline">{{ item.subline }}</span>
+            <span class="service-expandable-toggle">
+              <span class="service-expandable-icon" aria-hidden="true"></span>
+              <span class="service-expandable-toggle-text">Expand detail</span>
+            </span>
           </summary>
           <div class="service-expandable-body">
-            <p>{{ item.description }}</p>
+            {% if item.details and item.details.length %}
+              {% for detail in item.details %}
+                <p><strong>{{ detail.label }} -</strong> {{ detail.text }}</p>
+              {% endfor %}
+            {% else %}
+              <p>{{ item.description }}</p>
+            {% endif %}
           </div>
         </details>
       {% endfor %}

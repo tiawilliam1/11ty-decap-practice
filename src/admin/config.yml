@@ -2,6 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
+local_backend: true
+
 media_folder: "src/uploads"
 public_folder: "/uploads"
 
@@ -13,12 +15,14 @@ collections:
         name: "about_page"
         file: "src/_data/about.json"
         fields:
-          - { label: "Hero Kicker", name: "hero_kicker", widget: "string" }
           - { label: "Page Title", name: "page_title", widget: "string" }
           - { label: "Short Intro", name: "short_intro", widget: "text" }
           - { label: "Name", name: "name", widget: "string" }
+          - { label: "Full Name", name: "full_name", widget: "string" }
           - { label: "Role", name: "role", widget: "string" }
-          - { label: "Main Intro", name: "intro_text", widget: "text" }
+          - { label: "Opening Paragraph", name: "opening_paragraph", widget: "text" }
+          - { label: "Opening Keyline", name: "opening_keyline", widget: "text" }
+          - { label: "Main Intro", name: "intro_text", widget: "text", required: false }
           - { label: "Profile Image", name: "profile_image", widget: "image" }
           - { label: "Profile Image Alt", name: "profile_image_alt", widget: "string" }
           - { label: "Quick Facts Title", name: "quick_facts_title", widget: "string" }
@@ -26,12 +30,29 @@ collections:
             name: "quick_facts"
             widget: "list"
             field: { label: "Fact", name: "item", widget: "string" }
+          - { label: "Career Timeline Title", name: "career_timeline_title", widget: "string" }
+          - { label: "Career Timeline Subline", name: "career_timeline_subline", widget: "text" }
+          - label: "Career Timeline"
+            name: "career_timeline"
+            widget: "list"
+            fields:
+              - { label: "Year", name: "year", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Highlights", name: "highlights", widget: "text" }
+          - { label: "Credentials Title", name: "credentials_title", widget: "string" }
+          - { label: "Credentials Subline", name: "credentials_subline", widget: "text" }
+          - label: "Credentials"
+            name: "credentials"
+            widget: "list"
+            field: { label: "Credential", name: "item", widget: "string" }
           - { label: "Professional Highlights Title", name: "professional_highlights_title", widget: "string" }
+          - { label: "Professional Highlights Subline", name: "professional_highlights_subline", widget: "text", required: false }
           - label: "Professional Highlights"
             name: "professional_highlights"
             widget: "list"
             field: { label: "Highlight", name: "item", widget: "string" }
           - { label: "Scientific Achievements Title", name: "scientific_achievements_title", widget: "string" }
+          - { label: "Scientific Achievements Subline", name: "scientific_achievements_subline", widget: "text", required: false }
           - label: "Scientific Achievements"
             name: "scientific_achievements"
             widget: "list"
@@ -49,4 +70,5 @@ collections:
       - { label: "Abstract", name: "abstract", widget: "text", required: false }
       - { label: "Image", name: "image", widget: "image", required: false }
       - { label: "Publication Link", name: "publication_link", widget: "string", required: true, hint: "Full URL, e.g. https://doi.org/... or https://journal.com/article" }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
       - { label: "Tags", name: "tags", widget: "hidden", default: ["posts"] }

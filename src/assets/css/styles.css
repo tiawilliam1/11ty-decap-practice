@@ -930,7 +930,7 @@
     padding: clamp(28px, 5vw, 56px) 0 22px;
     padding-bottom: 18%;
     padding-inline: clamp(20px, 4vw, 56px);
-    margin: -3% -50vw -10%;
+    margin: -3% -50vw -12%;
   }
 
   .services::before {
@@ -1278,6 +1278,7 @@ margin-bottom: 3%;
     letter-spacing: -0.02em;
     color: #1a2550;
     max-width: 16ch;
+    margin-top: 6%;
   }
 
   .why-intro p {
@@ -1380,7 +1381,7 @@ margin-bottom: 3%;
   .articles-preview {
     position: relative;
     padding: clamp(28px, 5vw, 52px) 0;
-    margin-top: 10px;
+    margin-top: -20%;
   }
 
   .articles-preview::before {
@@ -3179,10 +3180,7 @@ margin-bottom: -7%;
   .service-expandable summary {
     list-style: none;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
+    display: block;
     padding: clamp(16px, 1.8vw, 22px) clamp(16px, 1.9vw, 24px);
   }
 
@@ -3197,9 +3195,7 @@ margin-bottom: -7%;
   }
 
   .service-expandable-title {
-    display: inline-flex;
-    align-items: center;
-    gap: 0;
+    display: block;
     color: #1f4f8b;
     font-size: clamp(1.2rem, 1.9vw, 1.8rem);
     line-height: 1.2;
@@ -3207,15 +3203,37 @@ margin-bottom: -7%;
     font-weight: 700;
   }
 
+  .service-expandable-subline {
+    display: block;
+    margin-top: 10px;
+    color: #3f5c86;
+    font-size: clamp(0.92rem, 0.98vw, 0.96rem);
+    line-height: 1.5;
+    font-weight: 560;
+  }
+
+  .service-expandable-toggle {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #d8e5f7;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #1f4f8b;
+    font-size: 0.86rem;
+    font-weight: 640;
+    letter-spacing: 0.01em;
+    user-select: none;
+  }
+
   .service-expandable-icon {
     position: relative;
     flex: 0 0 auto;
-    width: 24px;
-    height: 24px;
-    margin-top: 0;
-    border-radius: 8px;
-    border: 1px solid #c2d4ee;
-    background: #edf4ff;
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(86, 131, 186, 0.5);
+    background: #f5f9ff;
   }
 
   .service-expandable-icon::before,
@@ -3224,9 +3242,9 @@ margin-bottom: -7%;
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 10px;
-    height: 1.5px;
-    background: #1f4f8b;
+    width: 8px;
+    height: 1.4px;
+    background: #2f6fb2;
     transform: translate(-50%, -50%);
     transition: transform 120ms ease;
   }
@@ -3241,16 +3259,20 @@ margin-bottom: -7%;
 
   .service-expandable-body {
     padding: 0 clamp(16px, 1.9vw, 24px) clamp(16px, 2vw, 24px);
-    border-top: 1px solid #d8e5f6;
   }
 
   .service-expandable-body p {
-    margin: 12px 0 0;
+    margin: 10px 0 0;
     max-width: none;
     color: #192538;
     font-size: clamp(0.98rem, 1.02vw, 1.08rem);
     line-height: 1.56;
     font-weight: 470;
+  }
+
+  .service-expandable-body p strong {
+    color: #173f73;
+    font-weight: 700;
   }
 
   .services-card-lead {
@@ -3562,7 +3584,8 @@ margin-bottom: -7%;
     line-height: 1.58;
   }
 
-  .industries-grid--domains .industries-card:last-child {
+  .industries-grid--domains .industries-card:last-child,
+  .industries-grid--clients .industries-card:last-child {
     grid-column: 1 / -1;
   }
 
@@ -4175,19 +4198,28 @@ font-weight: 500;
 
     .service-expandable summary {
       padding: 12px 12px;
-      gap: 10px;
     }
 
     .service-expandable-title {
       font-size: clamp(1.08rem, 5.6vw, 1.44rem);
       line-height: 1.2;
-      gap: 0;
+    }
+
+    .service-expandable-subline {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      line-height: 1.48;
+    }
+
+    .service-expandable-toggle {
+      margin-top: 9px;
+      padding-top: 9px;
+      font-size: 0.82rem;
     }
 
     .service-expandable-icon {
-      width: 22px;
-      height: 22px;
-      margin-top: 0;
+      width: 15px;
+      height: 15px;
     }
 
     .service-expandable-icon::before,
@@ -4268,7 +4300,8 @@ font-weight: 500;
       gap: 12px;
     }
 
-    .industries-grid--domains .industries-card:last-child {
+    .industries-grid--domains .industries-card:last-child,
+    .industries-grid--clients .industries-card:last-child {
       grid-column: auto;
     }
 
@@ -5666,6 +5699,7 @@ font-weight: 500;
       linear-gradient(132deg, #0a1f42 0%, #133563 48%, #1f4f8b 100%);
     box-shadow: none;
     padding: clamp(30px, 4.4vw, 56px) clamp(18px, 4vw, 46px);
+    margin-bottom: -5%;
   }
 
   body.home-theme-alt .about-timeline-section .about-kicker,
