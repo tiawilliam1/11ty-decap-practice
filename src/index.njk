@@ -21,7 +21,7 @@ home_theme: alt
      Where Science Meets Strategic IP; Deep-tech patent intelligence that reduces patent risk and speeds product decisions.
       </h2>
     </div>
-    <img class="hero-mark" src="/assets/img/Symmetrical%20blue%20gradient%20logo%20design.png" alt="" aria-hidden="true" />
+    <img class="hero-mark" src="/assets/img/this.png" alt="" aria-hidden="true" />
     <span class="hero-mark-light" aria-hidden="true"></span>
     <nav class="hero-cta-strip" aria-label="Hero quick links">
       <a href="/services/">Services</a>
@@ -176,15 +176,23 @@ Semiconductor physics, optoelectronics, and quantum devices are highly specialis
   </div>
 
   {% if collections.posts and collections.posts.length %}
-    <div class="cards">
+    <div class="cards cards--publications-preview">
       {% for post in collections.posts | reverse %}
         {% if loop.index0 < 3 %}
-          <article class="card">
+          <article class="card publication-preview-card">
             {% set publicationUrl = post.data.publication_link or post.url %}
-            <h3><a href="{{ publicationUrl }}" {% if post.data.publication_link %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ post.data.title }}</a></h3>
-            {% if post.data.abstract or post.data.description %}<p>{{ post.data.abstract or post.data.description }}</p>{% endif %}
+            {% set summaryText = post.data.abstract or post.data.description %}
+            <div class="publication-preview-content">
+              <h3><a href="{{ publicationUrl }}" {% if post.data.publication_link %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ post.data.title }}</a></h3>
+              {% if summaryText %}
+                <p class="publication-preview-excerpt">{{ summaryText }}</p>
+              {% endif %}
+            </div>
+            <a class="publication-preview-link" href="{{ publicationUrl }}" {% if post.data.publication_link %}target="_blank" rel="noopener noreferrer"{% endif %}>Read publication →</a>
             {% if post.data.image or post.data.featured_image %}
-              <img src="{{ post.data.image or post.data.featured_image }}" alt="" />
+              <a class="publication-preview-media" href="{{ publicationUrl }}" {% if post.data.publication_link %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                <img src="{{ post.data.image or post.data.featured_image }}" alt="" />
+              </a>
             {% endif %}
           </article>
         {% endif %}
