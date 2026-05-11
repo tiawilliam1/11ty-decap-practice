@@ -1,6 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: tiawilliam1/TechnoGenesis
   branch: main
+  auth_scope: repo
 
 local_backend: true
 
