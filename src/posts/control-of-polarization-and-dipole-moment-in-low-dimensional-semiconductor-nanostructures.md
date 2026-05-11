@@ -16,6 +16,6 @@ publication_link: https://alexandria.tue.nl/openaccess/Metis233157.pdf
 tags:
   - posts
 ---
-Keywords: *InAs/GaAs columnar quantum dots, polarization control, TE/TM, dipole moment, molecular beam epitaxy, electro-optical modulator*
+**Keywords:** *InAs/GaAs columnar quantum dots, polarization control, TE/TM, dipole moment, molecular beam epitaxy, electro-optical modulator*
 
-Reference: Li L.H., Mexis M. *et. al.*, *Appl. Phys. Lett.* 95, 221116 (2009)
+**Reference:** Li L.H., Mexis M. *et. al.*, *Appl. Phys. Lett.* 95, 221116 (2009)
