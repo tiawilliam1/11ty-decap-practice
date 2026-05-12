@@ -24,17 +24,6 @@
         </nav>
 
         <div class="header-actions">
-          <details class="lang-switch">
-            <summary aria-label="Language selector">
-              <span class="lang-switch-icon" aria-hidden="true">🌐</span>
-              <span class="lang-switch-label">EN</span>
-              <span class="lang-switch-caret" aria-hidden="true">▾</span>
-            </summary>
-            <div class="lang-options">
-              <a href="#" aria-disabled="true">English</a>
-              <a href="#" aria-disabled="true">French</a>
-            </div>
-          </details>
           <a class="cta-pill" href="/contact/">Contact</a>
         </div>
       </div>
@@ -51,10 +40,7 @@
             <a class="footer-logo-link" href="/" aria-label="Patent Engineer home">
               <img src="{% if home_theme == 'alt' %}/assets/img/TechnoGenesispreview.png{% else %}/assets/img/otherlogo1.png{% endif %}" alt="Patent Engineer logo" />
             </a>
-            <div class="footer-brand-copy">
-              <p class="footer-name">Meletis Mexis, PhD</p>
-              <p class="footer-role">Patent Analyst and Engineer</p>
-            </div>
+            
           </div>
 
           <div class="footer-contact">
@@ -66,7 +52,7 @@
         </div>
 
         <div class="footer-bottom">
-          <small>© {{ "now" | date("yyyy") }} Patent Engineer</small>
+          <small>© {{ "now" | date("yyyy") }} Meletis Mexis. All Rights Reserved.</small>
           <small>Powered by Tia William</small>
         </div>
       </div>

@@ -57,6 +57,15 @@ collections:
             name: "scientific_achievements"
             widget: "list"
             field: { label: "Achievement", name: "item", widget: "string" }
+      - label: "Publications & Projects"
+        name: "publications_page"
+        file: "src/_data/publications_topics.json"
+        fields:
+          - label: "Current Collaboration and Submission Topics"
+            name: "current_collaboration_topics"
+            widget: "list"
+            summary: "{{fields.topic}}"
+            field: { label: "Topic", name: "topic", widget: "string" }
 
   - name: "posts"
     label: "Publications"

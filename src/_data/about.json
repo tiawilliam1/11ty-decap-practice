@@ -1,6 +1,6 @@
 {
   "page_title": "About",
-  "short_intro": "Where science meets strategic IP decisions (Device physics and patent intelligence, from lab insight to IP strategy.)",
+  "short_intro": "Strategic IP for Deep Tech Translating technical insight into defensible patents and commercial advantage.",
   "name": "About DeepTech",
   "opening_paragraph": "Meletis Mexis, PhD, is the founder of TechnoGenesis. A physicist turned patent information professional, he combines ten years of scientific research in quantum optoelectronics with eight years of industrial IP experience. Clients get direct access to a physicist who understands device physics, experimental constraints, and patent claim language — so technical evidence and IP strategy are aligned from the start.",
   "opening_keyline": "Clients get direct access to a physicist who understands both device physics and patent claim language.",
@@ -21,11 +21,6 @@
       "year": "2025",
       "role": "CNRS Innovation, Patent Engineer",
       "highlights": "Managed IP for physics and mechanics projects; prepared weekly patent committee briefings and coordinated prosecution strategy with external counsel."
-    },
-    {
-      "year": "2017–2025",
-      "role": "Faurecia, Senior Patent Analyst",
-      "highlights": "Led patent analyst team. Patentability, FTO, landscaping, and patent monitoring for vehicle cockpit innovation."
     },
     {
       "year": "2023",
@@ -59,7 +54,7 @@
     "21 peer-reviewed publications and 10 international conference presentations",
     "Marie-Curie Fellow (2011–2012)"
   ],
-  "full_name": "Meletis Mexis, PhD",
+  "full_name": "Meletis Mexis",
   "role": "Patent analyst · Physicist and engineer",
   "intro_text": "With a dual background in quantum physics, photonics, and intellectual property, I help companies transform complex technologies into strong, defensible IP assets.",
   "profile_image": "/assets/img/MeletisPhoto.jpg",
