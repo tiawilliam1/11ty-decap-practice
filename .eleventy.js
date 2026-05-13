@@ -11,6 +11,7 @@ module.exports = function (eleventyConfig) {
 
   // Date filter (fixes Netlify build)
   eleventyConfig.addFilter("date", () => new Date().getFullYear());
+  eleventyConfig.addFilter("json", (value) => JSON.stringify(value));
 
   return {
     dir: {

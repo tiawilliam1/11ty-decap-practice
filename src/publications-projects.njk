@@ -1,12 +1,55 @@
 ---
 layout: base.njk
 title: Publications & Projects
+description: Publications, technical analyses, and research outputs from TechnoGenesis across patent intelligence and deep-tech engineering.
+meta_title: Publications and Projects in Deep-Tech Patent Intelligence
+meta_description: Explore publications, technical analyses, and research outputs from TechnoGenesis at the intersection of deep-tech innovation and IP strategy.
+meta_image: /assets/img/logo3.png
+meta_image_alt: Publications and projects by TechnoGenesis
+schema_type: CollectionPage
 permalink: /publications-projects/
 home_theme: alt
 ---
 
 {% set googleScholarUrl = "https://scholar.google.com/citations?hl=en&user=FpvwoYEAAAAJ" %}
 {% set collaborationTopics = publications_topics.current_collaboration_topics or [] %}
+
+{% if collections.posts and collections.posts.length %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "@id": {{ (site.url + page.url + "#publication-list") | json | safe }},
+      "name": {{ "TechnoGenesis Publications List" | json | safe }},
+      "mainEntityOfPage": {{ (site.url + page.url) | json | safe }},
+      "itemListOrder": "https://schema.org/ItemListOrderDescending",
+      "numberOfItems": {{ collections.posts.length }},
+      "itemListElement": [
+        {% for post in collections.posts | reverse %}
+          {% set postUrl = post.data.publication_link or (site.url + post.url) %}
+          {% set postSummary = post.data.abstract or post.data.description %}
+          {% set postImagePath = post.data.image or post.data.featured_image %}
+          {% if postImagePath and postImagePath[0] == "/" %}
+            {% set postImageUrl = site.url + postImagePath %}
+          {% else %}
+            {% set postImageUrl = postImagePath %}
+          {% endif %}
+          {
+            "@type": "ListItem",
+            "position": {{ loop.index }},
+            "item": {
+              "@type": "ScholarlyArticle",
+              "name": {{ post.data.title | json | safe }},
+              "url": {{ postUrl | json | safe }}{% if postSummary %},
+              "description": {{ (postSummary | striptags | trim) | json | safe }}{% endif %}{% if postImageUrl %},
+              "image": {{ postImageUrl | json | safe }}{% endif %}
+            }
+          }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    }
+  </script>
+{% endif %}
 
 <section class="publications-page">
   <div class="publications-hero">

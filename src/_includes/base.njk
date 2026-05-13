@@ -1,9 +1,129 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ site.language or 'en' }}">
   <head>
+    {% set metaTitle = meta_title or title or site.name %}
+    {% if metaTitle == site.name %}
+      {% set pageTitle = metaTitle %}
+    {% else %}
+      {% set pageTitle = metaTitle + " | " + site.name %}
+    {% endif %}
+    {% set rawMetaDescription = meta_description or description or abstract or site.defaultDescription %}
+    {% set metaDescriptionText = rawMetaDescription | striptags | trim %}
+    {% if metaDescriptionText.length > 180 %}
+      {% set metaDescription = metaDescriptionText.slice(0, 177).trim() + "..." %}
+    {% else %}
+      {% set metaDescription = metaDescriptionText %}
+    {% endif %}
+    {% set canonicalPath = canonical_path or page.url or "/" %}
+    {% set canonicalUrl = canonical_url or (site.url + canonicalPath) %}
+    {% set metaImagePath = meta_image or image or featured_image or site.defaultImage %}
+    {% if metaImagePath and metaImagePath[0] == "/" %}
+      {% set metaImageUrl = site.url + metaImagePath %}
+    {% else %}
+      {% set metaImageUrl = metaImagePath %}
+    {% endif %}
+    {% set pageType = meta_type or "website" %}
+    {% set schemaType = schema_type or (meta_type == "article" and "ScholarlyArticle" or "WebPage") %}
+    {% set logoImageUrl = site.url + site.defaultImage %}
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ title or "Site" }}</title>
+    <title>{{ pageTitle }}</title>
+    <meta name="description" content="{{ metaDescription }}" />
+    <meta name="author" content="{{ site.author }}" />
+    {% if noindex %}
+      <meta name="robots" content="noindex, nofollow" />
+    {% else %}
+      <meta name="robots" content="index, follow" />
+    {% endif %}
+    <meta name="theme-color" content="{{ site.themeColor }}" />
+    <link rel="canonical" href="{{ canonicalUrl }}" />
+    <link rel="alternate" hreflang="{{ site.language or 'en' }}" href="{{ canonicalUrl }}" />
+    <link rel="alternate" hreflang="x-default" href="{{ site.url }}/" />
+
+    <meta property="og:type" content="{{ pageType }}" />
+    <meta property="og:site_name" content="{{ site.name }}" />
+    <meta property="og:locale" content="{{ site.locale }}" />
+    <meta property="og:title" content="{{ pageTitle }}" />
+    <meta property="og:description" content="{{ metaDescription }}" />
+    <meta property="og:url" content="{{ canonicalUrl }}" />
+    <meta property="og:image" content="{{ metaImageUrl }}" />
+    <meta property="og:image:alt" content="{{ meta_image_alt or pageTitle }}" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ pageTitle }}" />
+    <meta name="twitter:description" content="{{ metaDescription }}" />
+    <meta name="twitter:image" content="{{ metaImageUrl }}" />
+    {% if site.twitterHandle %}
+      <meta name="twitter:site" content="{{ site.twitterHandle }}" />
+    {% endif %}
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": {{ schemaType | json | safe }},
+        "@id": {{ canonicalUrl | json | safe }},
+        "name": {{ metaTitle | json | safe }},
+        "headline": {{ metaTitle | json | safe }},
+        "description": {{ metaDescription | json | safe }},
+        "url": {{ canonicalUrl | json | safe }},
+        "inLanguage": {{ (site.language or "en") | json | safe }},
+        "image": {{ metaImageUrl | json | safe }},
+        "mainEntityOfPage": {{ canonicalUrl | json | safe }},
+        {% if meta_type == "article" and publication_link %}
+        "sameAs": {{ publication_link | json | safe }},
+        {% endif %}
+        "author": {
+          "@type": "Person",
+          "name": {{ site.author | json | safe }}
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": {{ site.name | json | safe }},
+          "logo": {
+            "@type": "ImageObject",
+            "url": {{ logoImageUrl | json | safe }}
+          }
+        }
+      }
+    </script>
+
+    {% if page.url and page.url != "/" %}
+      {% if page.url.indexOf("/posts/") == 0 %}
+        {% set breadcrumbSecondName = "Publications & Projects" %}
+        {% set breadcrumbSecondUrl = site.url + "/publications-projects/" %}
+      {% else %}
+        {% set breadcrumbSecondName = metaTitle %}
+        {% set breadcrumbSecondUrl = canonicalUrl %}
+      {% endif %}
+
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": {{ "Home" | json | safe }},
+              "item": {{ (site.url + "/") | json | safe }}
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": {{ breadcrumbSecondName | json | safe }},
+              "item": {{ breadcrumbSecondUrl | json | safe }}
+            }{% if page.url.indexOf("/posts/") == 0 %},
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": {{ metaTitle | json | safe }},
+              "item": {{ canonicalUrl | json | safe }}
+            }{% endif %}
+          ]
+        }
+      </script>
+    {% endif %}
     <link rel="stylesheet" href="/assets/css/styles.css" />
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
