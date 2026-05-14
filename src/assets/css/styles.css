@@ -4334,6 +4334,7 @@ font-weight: 500;
     .publications-info-inner h2 {
       font-size: clamp(1.66rem, 7.4vw, 2.12rem);
       line-height: 1.13;
+      margin-top: 10%;
     }
 
     .publications-info-inner p {
@@ -4402,6 +4403,7 @@ font-weight: 500;
     .publications-science-highlights {
       margin-top: 18px;
       gap: 10px;
+      margin-bottom: 10%;
     }
 
     .publications-science-highlights li {
@@ -4409,6 +4411,7 @@ font-weight: 500;
       font-size: 0.92rem;
       border-radius: 10px;
     }
+
 
     .publications-science-highlights li::before {
       left: 12px;
@@ -4423,6 +4426,7 @@ font-weight: 500;
 
     .publications-head {
       margin-bottom: 18px;
+      margin-top: 10%;
     }
 
     .publications-head p {
@@ -4452,6 +4456,7 @@ font-weight: 500;
       min-width: 36px;
       min-height: 36px;
       border-radius: 9px;
+      margin-bottom: 10%;
     }
 
     .publication-card {
