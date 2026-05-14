@@ -270,6 +270,7 @@
     .site-header.menu-open .header-actions {
       display: inline-flex;
       margin-bottom: 10px;
+      margin-left: 39%;
     }
 
     .nav a {
@@ -1417,6 +1418,7 @@ margin-bottom: 3%;
 
       padding-bottom: 26px;
        margin-top: -166px;
+       margin-bottom: -79%;
     }
 
     .why-work-inner {
@@ -1743,7 +1745,7 @@ margin-bottom: 3%;
 
   @media (max-width: 760px) {
     .section-head--publications {
-      margin-top: 22%;
+       margin-top: 80%;
     }
 
     .articles-preview .cards {
@@ -5781,6 +5783,7 @@ bottom: 24%;
   @media (max-width: 980px) {
     body.home-theme-alt .site-header.menu-open .nav {
       border-top-color: rgba(31, 79, 139, 0.24);
+      text-align: center;
     }
 
     body.home-theme-alt .header-actions .cta-pill {
