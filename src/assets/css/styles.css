@@ -1209,10 +1209,16 @@ margin-bottom: 3%;
   @media (max-width: 980px) {
     .services-grid {
       grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 12%;
     }
 
     .services-cta-row {
       margin-top: 20px;
+    }
+
+    .service-card {
+      margin-top: 0;
     }
 
     .service-text {
